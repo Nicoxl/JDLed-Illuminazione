@@ -174,6 +174,15 @@ h1.bigTitle {
   align-self: flex-start; /* Allinea a sinistra */
 }
 
+.smallTitle {
+  font-size: clamp(1.5rem, 6vw, 2.5rem); /* Si ridimensiona fluidamente tra 1.5rem e 2.5rem */
+  border-bottom: 2px solid #c4b494;
+  padding-bottom: 0.3em;
+  margin: 2rem 0; /* Margini puliti, via quelli enormi */
+  max-width: fit-content;
+  align-self: flex-start; /* Allinea a sinistra */
+}
+
 h1.otherTitle {
   font-size: 3rem;
   border-bottom: 2px solid #c4b494;
@@ -498,35 +507,54 @@ footer a {
 
 /*Media Query Mobile Devices*/
 @media (max-width: 1024px) {
-    
     /* --- TITOLI E TESTI --- */
     h1.bigTitle {
         text-align: center;
         margin: 0; /* Rimuoviamo margini forzati */
-        align-self: center;
-        font-size: 4rem;
-        padding: 0 1rem; /* Un po' di padding laterale per sicurezza */
+        align-self:top; /* Allinea in alto al container */
+        font-size: 3.5rem;
+    }
+
+    .smallTitle {
+        text-align: center;
+        margin: 0.2rem auto 0 auto; /* Zero margine inferiore qui */
+        align-self: top; /* Allineamento nel flexbox mobile */
+        padding: 1rem 0.5rem 0.2rem 0.5rem; /* Padding inferiore per staccare la riga dal testo */
+        font-size: 2rem;
+        border-bottom: 2px solid #c4b494;
+        max-width: fit-content; /* Mantiene la riga corta quanto il testo */
+        display: block;
     }
 
     #subtitle {
+        margin-top: 10rem !important; 
+        margin-bottom: 2rem; /* Distanza dal footer */
         text-align: center;
-        margin: 0; /* Rimuoviamo margini forzati */
-        align-self: center;
+        align-self: center; /* Centra il sottotitolo */
         max-width: 100%;
         background-color: rgba(253, 247, 238, 0.85); 
         padding: 2rem; /* Più spazio interno per il testo */
         border-radius: 15px; /* Arrotondiamo un po' di più */
         box-shadow: 0 4px 15px rgba(140, 111, 77, 0.1); 
+        margin-bottom: 2rem; /* Distanza di sicurezza dal footer */
+    }
+
+    .titlebox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3rem;
     }
 
     .hero-container {
         display: flex;
         flex-direction: column;
+        flex:1; /* Permette al container di espandersi e occupare tutto lo spazio disponibile */
         min-height: 75vh; 
-        /* "space-evenly" mette spazio uguale sopra, in mezzo e sotto: molto più arioso */
-        justify-content: space-evenly; 
+        min-height: 70vh; /* Altezza minima per dare spazio di manovra */
+        justify-content: flex-start; /* Allinea gli elementi dall'inizio */
         align-items: center;
-        gap: 1rem; /* Gap ridotto perché ci pensa space-evenly a distanziarli */
+        gap: 0.5rem;
     }
 
     /* --- MENU --- */
