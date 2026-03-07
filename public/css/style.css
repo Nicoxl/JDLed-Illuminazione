@@ -512,7 +512,7 @@ footer a {
         text-align: center;
         margin: 0; /* Rimuoviamo margini forzati */
         align-self:top; /* Allinea in alto al container */
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 
     .smallTitle {
@@ -670,12 +670,12 @@ footer a {
         -webkit-app-region: drag; 
         
         /* Sintassi standard (per il futuro) */
-        app-region: drag; 
+        /*app-region: drag; */
     }
 
     /* I pulsanti devono essere cliccabili */
     header button, header a, header nav {
         -webkit-app-region: no-drag;
-        app-region: no-drag;
+        /*app-region: no-drag; */
     }
 }
