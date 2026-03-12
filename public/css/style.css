@@ -158,20 +158,20 @@ body.no-scroll {
 .hero-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Spinge titolo in alto e sottotitolo in basso/centro */
-    min-height: 60vh; /* Altezza minima per dare respiro al logo */
+    justify-content: space-between; /* Questo spinge i blocchi ai due estremi */
+    min-height: 70vh; /* Aumentato leggermente per dare più respiro */
     width: 100%;
-    max-width: 1400px; /* Non allargarsi troppo su schermi giganti */
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 h1.bigTitle {
-  font-size: clamp(3rem, 6vw, 5rem); /* Si ridimensiona fluidamente tra 3rem e 5rem */
+  font-size: clamp(3.5rem, 8vw, 5.5rem); 
   border-bottom: 2px solid #c4b494;
   padding-bottom: 0.3em;
-  margin: 2rem 0; /* Margini puliti, via quelli enormi */
+  margin: 2rem 0;
   max-width: fit-content;
-  align-self: flex-start; /* Allinea a sinistra */
+  align-self: flex-start;
 }
 
 .smallTitle {
@@ -510,9 +510,9 @@ footer a {
     /* --- TITOLI E TESTI --- */
     h1.bigTitle {
         text-align: center;
-        margin: 0; /* Rimuoviamo margini forzati */
-        align-self:top; /* Allinea in alto al container */
-        font-size: 3rem;
+        margin: 0;
+        align-self: top;
+        font-size: clamp(3.8rem, 10vw, 5rem);
     }
 
     .smallTitle {
@@ -527,16 +527,15 @@ footer a {
     }
 
     #subtitle {
-        margin-top: 10rem !important; 
-        margin-bottom: 2rem; /* Distanza dal footer */
+        margin-top: auto; /* Spinge il sottotitolo verso il basso se c'è spazio */
+        margin-bottom: 2rem;
         text-align: center;
-        align-self: center; /* Centra il sottotitolo */
+        align-self: center;
         max-width: 100%;
         background-color: rgba(253, 247, 238, 0.85); 
-        padding: 2rem; /* Più spazio interno per il testo */
-        border-radius: 15px; /* Arrotondiamo un po' di più */
-        box-shadow: 0 4px 15px rgba(140, 111, 77, 0.1); 
-        margin-bottom: 2rem; /* Distanza di sicurezza dal footer */
+        padding: 2rem; 
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(140, 111, 77, 0.1);
     }
 
     .titlebox {
@@ -549,12 +548,12 @@ footer a {
     .hero-container {
         display: flex;
         flex-direction: column;
-        flex:1; /* Permette al container di espandersi e occupare tutto lo spazio disponibile */
-        min-height: 75vh; 
-        min-height: 70vh; /* Altezza minima per dare spazio di manovra */
-        justify-content: flex-start; /* Allinea gli elementi dall'inizio */
+        flex: 1;
+        min-height: 70vh; 
+        /* Cambiato da flex-start a space-between per distribuire i testi */
+        justify-content: space-between; 
         align-items: center;
-        gap: 0.5rem;
+        gap: 2rem;
     }
 
     /* --- MENU --- */
