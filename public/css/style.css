@@ -29,6 +29,54 @@ body {
     animation: fadeIn 0.4s ease-in-out;
 }
 
+/* Pulsante Cambio Lingua */
+.lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    margin-left: 20px; /* Distanza dal resto del menu */
+}
+
+.lang-link {
+    text-decoration: none;
+    color: #555555; /* Colore spento di base */
+    transition: all 0.3s ease;
+    padding: 2px 0;
+    font-weight: 500;
+    position: relative;
+}
+
+.lang-separator {
+    color: #cccccc;
+    font-size: 14px;
+    user-select: none;
+}
+
+/* Effetto Hover e Stato Attivo con il tuo colore oro/bronzo */
+.lang-link:hover, 
+.lang-link.active {
+    color: #8c6f4d; 
+}
+
+/* Sottolineatura elegante che appare al passaggio del mouse o se attivo */
+.lang-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #8c6f4d;
+    transition: width 0.3s ease;
+}
+
+.lang-link:hover::after,
+.lang-link.active::after {
+    width: 100%;
+}
+
 /*Header*/
 header {
   background-color: var(--primary-color);
