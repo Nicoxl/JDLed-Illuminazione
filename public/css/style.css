@@ -36,31 +36,37 @@ body {
     gap: 10px;
     font-family: 'Playfair Display', serif;
     font-size: 16px;
-    margin-left: 20px; /* Distanza dal resto del menu */
+    margin-left: 20px;
+    white-space: nowrap; /* FONDAMENTALE: impedisce a EN di andare a capo e sparire */
 }
 
 .lang-link {
     text-decoration: none;
-    color: var(--text-color); /* Colore spento di base */
+    color: var(--text-color); /* Nero normale per entrambe di base */
+    font-weight: 700;
     transition: all 0.3s ease;
     padding: 2px 0;
-    font-weight: 500;
     position: relative;
 }
 
 .lang-separator {
-    color: var(--background-color); /* Colore del separatore */
-    font-size: 14px;
+    color: var(--background-color); /* Bianco puro, come le 3 lineette del menu hamburger */
+    font-size: 16px;
     user-select: none;
 }
 
-/* Effetto Hover e Stato Attivo con il tuo colore oro/bronzo */
-.lang-link:hover, 
+/* Lingua Attuale (Attiva) */
 .lang-link.active {
-    color: #8c6f4d; 
+    color: var(--background-color); /* Bianco puro per la lingua attiva */
+    font-weight: 1000; /* Diventa GRASSETTO */
 }
 
-/* Sottolineatura elegante che appare al passaggio del mouse o se attivo */
+/* Effetto al passaggio del mouse (manteniamo un tocco del tuo color oro/bronzo) */
+.lang-link:hover {
+    color: var(--background-color); 
+}
+
+/* Sottolineatura elegante sotto la lingua attiva o al passaggio del mouse */
 .lang-link::after {
     content: '';
     position: absolute;
@@ -68,8 +74,13 @@ body {
     height: 1px;
     bottom: 0;
     left: 0;
-    background-color: #8c6f4d;
+    background-color: #8c6f4d; /* Colore oro/bronzo per la riga */
     transition: width 0.3s ease;
+}
+
+.lang-link:hover::after,
+.lang-link.active::after {
+    width: 100%;
 }
 
 .lang-link:hover::after,
