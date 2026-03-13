@@ -196,6 +196,7 @@ body.no-scroll {
 h1.bigTitle {
   font-size: clamp(2.5rem, 8vw, 5.5rem); /* Minimo ridotto per schermi piccoli */
   border-bottom: 2px solid #c4b494;
+  display: inline-block; /* Per far sì che la riga sia lunga quanto il testo */
   padding-bottom: 0.3em;
   margin: 2rem 0;
   max-width: 100%; /* Impedisce di uscire dal contenitore */
