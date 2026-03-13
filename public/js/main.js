@@ -48,36 +48,47 @@ window.addEventListener('load', function() {
     }
 });
 
-const handleLanguageLinks = () => {
-    const currentUrl = window.location.href; // Usiamo l'URL intero, più sicuro
+const setupLanguageSwitcher = () => {
     const btnIt = document.getElementById('change-to-it');
     const btnEn = document.getElementById('change-to-en');
+    const currentPath = window.location.pathname;
 
     if (!btnIt || !btnEn) return false;
 
-    // Rimuoviamo la classe active da entrambi per sicurezza prima di iniziare
+    // 1. Reset classi
     btnIt.classList.remove('active');
     btnEn.classList.remove('active');
 
-    if (currentUrl.includes('/en/')) {
-        // --- SIAMO IN INGLESE ---
-        btnEn.classList.add('active'); // Grassetto su EN
-        btnEn.href = "#";
-        // Il tasto IT deve portarci alla versione italiana
-        btnIt.href = currentUrl.replace('/en/', '/it/');
-    } else {
-        // --- SIAMO IN ITALIANO (o root) ---
-        btnIt.classList.add('active'); // Grassetto su IT
-        btnIt.href = "#";
-        // Il tasto EN deve portarci alla versione inglese
-        if (currentUrl.endsWith('.app/') || currentUrl.endsWith('.app')) {
-             btnEn.href = "/en/index.html";
+    // 2. Logica per Inglese
+    if (currentPath.includes('/en/')) {
+        btnEn.classList.add('active');
+        // Il tasto IT deve portarti alla stessa pagina in /it/
+        btnIt.href = currentPath.replace('/en/', '/it/');
+        // Il tasto EN lo lasciamo cliccabile sulla home inglese o #
+        btnEn.href = "/en/index.html"; 
+    } 
+    // 3. Logica per Italiano
+    else {
+        btnIt.classList.add('active');
+        // Il tasto EN deve portarti alla stessa pagina in /en/
+        if (currentPath === "/" || currentPath.includes("index.html")) {
+            btnEn.href = "/en/index.html";
         } else {
-             btnEn.href = currentUrl.replace('/it/', '/en/');
+            btnEn.href = currentPath.replace('/it/', '/en/');
         }
+        btnIt.href = "/it/index.html";
     }
-    
-    // Test di debug: se lo vedi in console vuol dire che ha lavorato
-    console.log("Lingua impostata. URL attuale:", currentUrl);
     return true;
 };
+
+// Avvio con controllo ripetuto (per via dell'include-html)
+const startLangCheck = () => {
+    let attempts = 0;
+    const interval = setInterval(() => {
+        const done = setupLanguageSwitcher();
+        attempts++;
+        if (done || attempts > 50) clearInterval(interval);
+    }, 100);
+};
+
+document.addEventListener("DOMContentLoaded", startLangCheck);

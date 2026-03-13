@@ -37,52 +37,46 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 16px;
     margin-left: 20px;
-    white-space: nowrap; /* FONDAMENTALE: impedisce a EN di andare a capo e sparire */
+    white-space: nowrap; 
 }
 
 .lang-link {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.5); /* Nero normale per entrambe di base */
-    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5); /* Lingua non attiva: bianca trasparente */
+    font-weight: 700; /* Testo normale per la lingua non attiva */
     transition: all 0.3s ease;
     padding: 2px 0;
     position: relative;
 }
 
 .lang-separator {
-    color: var(--background-color); /* Bianco puro, come le 3 lineette del menu hamburger */
+    /* Usa white o #ffffff se var(--background-color) non è bianco */
+    color: #ffffff; 
     font-size: 16px;
     user-select: none;
 }
 
 /* Lingua Attuale (Attiva) */
-.lang-link.active {
-    color: var(--background-color); /* Bianco puro per la lingua attiva */
-    font-weight: 1000; /* Diventa GRASSETTO */
+a.lang-link.active {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+    cursor: default; /* Fa capire che è già selezionata */
 }
 
-/* Effetto al passaggio del mouse (manteniamo un tocco del tuo color oro/bronzo) */
+/* Effetto al passaggio del mouse */
 .lang-link:hover {
-    color: var(--background-color); 
+    color: #ffffff; 
+    opacity: 1;
 }
 
-/* Sottolineatura elegante sotto la lingua attiva o al passaggio del mouse */
-.lang-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: 0;
-    left: 0;
-    background-color: #8c6f4d; /* Colore oro/bronzo per la riga */
-    transition: width 0.3s ease;
+/* Sottolineatura elegante */
+a.lang-link.active::after {
+    width: 100% !important;
+    background-color: #8c6f4d; /* Il tuo oro/bronzo */
 }
 
-.lang-link:hover::after,
-.lang-link.active::after {
-    width: 100%;
-}
-
+/* Mostra la sottolineatura se attivo o al mouse sopra */
 .lang-link:hover::after,
 .lang-link.active::after {
     width: 100%;
