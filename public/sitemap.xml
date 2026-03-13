@@ -1,57 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <url>
+    <loc>https://jdledprojectlux.web.app/it/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://jdledprojectlux.web.app/it/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jdledprojectlux.web.app/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jdledprojectlux.web.app/it/index.html"/>
+    <lastmod>2026-03-13</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jdledprojectlux.web.app/en/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://jdledprojectlux.web.app/it/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jdledprojectlux.web.app/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jdledprojectlux.web.app/it/index.html"/>
+    <lastmod>2026-03-13</lastmod>
+    <priority>1.0</priority>
+  </url>
 
-<url>
-  <loc>https://jdledprojectlux.web.app/</loc>
-  <lastmod>2026-01-17T01:03:09+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://jdledprojectlux.web.app/index.html</loc>
-  <lastmod>2026-01-17T01:03:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jdledprojectlux.web.app/whoweare.html</loc>
-  <lastmod>2026-01-17T01:03:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jdledprojectlux.web.app/illuminazione-interni.html</loc>
-  <lastmod>2026-01-17T01:03:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jdledprojectlux.web.app/illuminazione-esterni.html</loc>
-  <lastmod>2026-01-17T01:03:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jdledprojectlux.web.app/contacts.html</loc>
-  <lastmod>2026-01-17T01:03:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jdledprojectlux.web.app/privacy-policy.html</loc>
-  <lastmod>2026-01-17T01:03:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jdledprojectlux.web.app/cookie-policy.html</loc>
-  <lastmod>2026-01-17T01:03:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jdledprojectlux.web.app/terms-notes.html</loc>
-  <lastmod>2026-01-17T01:03:09+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://jdledprojectlux.web.app/it/whoweare.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://jdledprojectlux.web.app/it/whoweare.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jdledprojectlux.web.app/en/whoweare.html"/>
+    <lastmod>2026-03-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jdledprojectlux.web.app/en/whoweare.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://jdledprojectlux.web.app/it/whoweare.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jdledprojectlux.web.app/en/whoweare.html"/>
+    <lastmod>2026-03-13</lastmod>
+    <priority>0.8</priority>
+  </url>
 
+  <url>
+    <loc>https://jdledprojectlux.web.app/it/illuminazione-interni.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://jdledprojectlux.web.app/it/illuminazione-interni.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jdledprojectlux.web.app/en/illuminazione-interni.html"/>
+    <lastmod>2026-03-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jdledprojectlux.web.app/en/illuminazione-interni.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://jdledprojectlux.web.app/it/illuminazione-interni.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jdledprojectlux.web.app/en/illuminazione-interni.html"/>
+    <lastmod>2026-03-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://jdledprojectlux.web.app/it/illuminazione-esterni.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://jdledprojectlux.web.app/it/illuminazione-esterni.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jdledprojectlux.web.app/en/illuminazione-esterni.html"/>
+    <lastmod>2026-03-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jdledprojectlux.web.app/en/illuminazione-esterni.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://jdledprojectlux.web.app/it/illuminazione-esterni.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jdledprojectlux.web.app/en/illuminazione-esterni.html"/>
+    <lastmod>2026-03-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://jdledprojectlux.web.app/it/contacts.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://jdledprojectlux.web.app/it/contacts.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jdledprojectlux.web.app/en/contacts.html"/>
+    <lastmod>2026-03-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jdledprojectlux.web.app/en/contacts.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://jdledprojectlux.web.app/it/contacts.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jdledprojectlux.web.app/en/contacts.html"/>
+    <lastmod>2026-03-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url><loc>https://jdledprojectlux.web.app/it/privacy-policy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://jdledprojectlux.web.app/en/privacy-policy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://jdledprojectlux.web.app/it/cookie-policy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://jdledprojectlux.web.app/en/cookie-policy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://jdledprojectlux.web.app/it/terms-notes.html</loc><priority>0.3</priority></url>
+  <url><loc>https://jdledprojectlux.web.app/en/terms-notes.html</loc><priority>0.3</priority></url>
 
 </urlset>
