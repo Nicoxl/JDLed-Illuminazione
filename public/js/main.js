@@ -48,21 +48,27 @@ window.addEventListener('load', function() {
     }
 });
 
-// Accende il pulsante della lingua corretta nell'header
 document.addEventListener("DOMContentLoaded", () => {
-    // Aspettiamo mezzo secondo per dare tempo al tuo script "include-html" di caricare l'header
+    // Aspettiamo che l'header venga caricato dallo script include-html
     setTimeout(() => {
         const currentPath = window.location.pathname;
-        
-        // Se siamo nella cartella /en/
-        if (currentPath.includes('/en/')) {
-            const btnEn = document.getElementById('lang-en');
-            if (btnEn) btnEn.classList.add('active');
-        } 
-        // Altrimenti diamo per scontato che siamo in italiano (o nella root)
-        else {
-            const btnIt = document.getElementById('lang-it');
-            if (btnIt) btnIt.classList.add('active');
+        const btnIt = document.getElementById('change-to-it');
+        const btnEn = document.getElementById('change-to-en');
+
+        if (currentPath.includes('/it/')) {
+            // Siamo in italiano, il tasto EN deve portarci alla stessa pagina ma in /en/
+            if (btnEn) btnEn.href = currentPath.replace('/it/', '/en/');
+            if (btnIt) {
+                btnIt.href = "#"; 
+                btnIt.classList.add('active');
+            }
+        } else if (currentPath.includes('/en/')) {
+            // Siamo in inglese, il tasto IT deve portarci alla stessa pagina ma in /it/
+            if (btnIt) btnIt.href = currentPath.replace('/en/', '/it/');
+            if (btnEn) {
+                btnEn.href = "#";
+                btnEn.classList.add('active');
+            }
         }
-    }, 500); // 500 millisecondi di ritardo per far caricare l'HTML iniettato
+    }, 600); 
 });
