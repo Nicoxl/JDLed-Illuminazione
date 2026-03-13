@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JDLed Illuminazione (Project Lux) - Tutti i consigli per illuminare la tua casa con le ultime tendenze e prodotti di alta qualità">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="msapplication-TileColor" content="#8c6f4d">
+    <link rel="apple-touch-icon" href="/images/icon-192.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"> <!--Font Link-->
+    <title>Contatti | JDLed Illuminazione</title>
+    <script src="/js/menu.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0NZSTZY12"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V0NZSTZY12');
+    </script>
+    <script src="/js/main.js"></script>
+</head>
+<body class="home">
+    <div include-html="header.html"></div>
+    <main>
+        <h1 class="otherTitle">Contatti</h1>
+        <p class="contacts-desc">Hai bisogno di informazioni? Scrivici o vieni a trovarci.</p>
+        <div class="contacts-grid">
+            <div class="contacts-info">
+                <p><strong>Email:</strong> jessica.jdled@gmail.com</p>
+                <p><strong>PEC:</strong> jdled@pec.it</p>
+                <p><strong>SDI:</strong> 6JXPS2J</p>
+                <p><strong>Partita IVA:</strong> 04585400247</p>
+                <!--<p><strong>Ufficio del registro delle imprese:</strong> </p>
+                <p><strong>N° Iscrizione REA: </strong> </p>-->
+                <p><strong>Cell:</strong> +39 346 8386491</p>
+                <p><strong>Sede legale:</strong> Località Campagna n.50, 36078 Valdagno (VI)</p>
+                <p><strong>Sede operativa:</strong> <i>(Ex Benetti Illuminazione)</i><br>Via Monte Cimone n.15/b, 36073 Cornedo Vicentino (VI)</p>
+            </div>
+            <br>
+            <div class="contacts-form-wrapper">
+                <p class="contacts-desc">Oppure lascia qui i tuoi dati!</p>
+                <form action="https://formsubmit.co/jessica.jdled@gmail.com" method="POST" class="contacts-form" id="contacts-form">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" placeholder="Inserisci il tuo nome..." required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Inserisci la tua email..." required>
+                    <label for="tel">Telefono:</label>
+                    <input type="text" id="tel" name="tel" placeholder="Inserisci il tuo numero di telefono..." required>
+                    <label for="msg">Messaggio:</label>
+                    <textarea id="msg" name="msg" rows="5" placeholder="Scrivi qui il messaggio..." required></textarea>
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://jdledprojectlux.web.app/contacts.html">
+                    <button type="submit">Invia</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        <p id="form-msg"></p>
+        </div>
+    </main>
+    <div include-html="footer.html"></div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('contacts-form');
+        const msg = document.getElementById('form-msg');
+
+        // Mostra messaggio di successo se presente in localStorage (post-redirect)
+        if (localStorage.getItem("formInviato") === "true") {
+        msg.textContent = "Messaggio inviato con successo!";
+        msg.style.color = "green";
+        msg.style.display = "block";
+        msg.style.marginLeft = "auto";
+        localStorage.removeItem("formInviato"); // pulizia dopo visualizzazione
+        }
+
+        // Controlla i campi prima dell'invio
+        if (form) {
+        form.addEventListener('submit', function (e) {
+            const nome = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const telefono = document.getElementById('tel').value.trim();
+            const messaggio = document.getElementById('msg').value.trim();
+
+            if (!nome || !email || !telefono || !messaggio) {
+            e.preventDefault();
+            msg.textContent = "Compila tutti i campi prima di inviare.";
+            msg.style.color = "red";
+            msg.style.display = "block";
+            msg.style.marginLeft = "auto";
+            } else {
+            // Salva il flag per mostrare il messaggio dopo redirect
+            localStorage.setItem("formInviato", "true");
+            msg.textContent = "Invio in corso...";
+            msg.style.color = "green";
+            msg.style.display = "block";
+            msg.style.marginLeft = "auto";
+            }
+        });
+        }
+    });
+    </script>
+</body>
+</html>

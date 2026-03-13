@@ -6,12 +6,9 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/public/index.html"
-      }
-    ],
-    "errorPage": "/public/404.html" 
+    "i18n": {
+      "root": "/"
+    },
+    "errorPage": "/404.html"
   }
 }

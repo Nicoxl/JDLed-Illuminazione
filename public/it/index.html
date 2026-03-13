@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <link rel="alternate" hreflang="it" href="https://jdledprojectlux.web.app/it/" />
+    <link rel="alternate" hreflang="en" href="https://jdledprojectlux.web.app/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://jdledprojectlux.web.app/it/" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JDLed Illuminazione</title>
+    <meta name="google-site-verification" content="7h1F6NSx2JzUXexdbYautrOvIHC158QyWufGms42Z9w" />
+    <meta name="description" content="JDLed Illuminazione (Project Lux) - Tutti i consigli per illuminare la tua casa con le ultime tendenze e prodotti di alta qualità">
+    <meta property="og:site_name" content="JDLed Illuminazione (Project Lux)" />
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="msapplication-TileColor" content="#8c6f4d">
+    <link rel="apple-touch-icon" href="/images/icon-192.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/ico">
+    <link href="/https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"><!--Font Link-->
+    <script src="/js/menu.js" defer></script>
+    <script defer src="/__/firebase/11.7.1/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0NZSTZY12"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-V0NZSTZY12');
+    </script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "JDLed Project Lux",
+          "alternateName": ["JDLed", "JDLed Project Lux"],
+          "url": "https://jdledprojectlux.web.app/"
+        }
+    </script>
+    <script src="/js/main.js"></script>
+  </head>
+  <body class="home">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <!--End Preloader -->
+     <div include-html="header.html"></div>
+      <main id="mainMain">
+        <div class="hero-container">
+          <div class="title-box">
+            <h1 class="bigTitle">JDLed Illuminazione</h1>
+            <h2 class="smallTitle">Project Lux</h2>
+          </div>
+          <div class="subtitle-box">
+            <h2 id="subtitle">Tutti i consigli per illuminare la tua casa con le ultime tendenze per donare stile ed
+            eleganza all'ambiente offrendo prodotti di alta qualità per diverse esigenze</h2>
+          </div>
+        </div>
+      </main>
+      <div include-html="footer.html"></div>
+  </body>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('Service Worker registrato!', reg))
+      .catch(err => console.log('Errore Service Worker:', err));
+      });
+    }
+  </script>
+</html>
