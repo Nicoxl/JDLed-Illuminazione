@@ -41,7 +41,7 @@ body {
 
 .lang-link {
     text-decoration: none;
-    color: #555555; /* Colore spento di base */
+    color: var(--text-color); /* Colore spento di base */
     transition: all 0.3s ease;
     padding: 2px 0;
     font-weight: 500;
@@ -49,7 +49,7 @@ body {
 }
 
 .lang-separator {
-    color: #cccccc;
+    color: var(--background-color); /* Colore del separatore */
     font-size: 14px;
     user-select: none;
 }
