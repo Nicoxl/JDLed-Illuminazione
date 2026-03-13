@@ -33,53 +33,28 @@ body {
 .lang-switcher {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    margin-left: 20px;
-    white-space: nowrap; 
+    gap: 8px;
+    margin-left: 15px;
 }
 
 .lang-link {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.5); /* Lingua non attiva: bianca trasparente */
-    font-weight: 700; /* Testo normale per la lingua non attiva */
-    transition: all 0.3s ease;
-    padding: 2px 0;
-    position: relative;
+    color: #cccccc; /* Grigio chiaro per la lingua non attiva */
+    font-weight: 400;
+    font-family: 'Playfair Display', serif;
+    transition: 0.3s;
 }
 
-.lang-separator {
-    /* Usa white o #ffffff se var(--background-color) non è bianco */
-    color: #ffffff; 
-    font-size: 16px;
-    user-select: none;
-}
-
-/* Lingua Attuale (Attiva) */
-a.lang-link.active {
+/* Lingua attiva: Bianca, Grassetto e Sottolineata */
+.lang-link.active {
     color: #ffffff !important;
     font-weight: 700 !important;
-    opacity: 1 !important;
-    cursor: default; /* Fa capire che è già selezionata */
+    border-bottom: 2px solid #8c6f4d; /* Usiamo il bordo invece di ::after per sicurezza mobile */
 }
 
-/* Effetto al passaggio del mouse */
+/* Hover semplice */
 .lang-link:hover {
-    color: #ffffff; 
-    opacity: 1;
-}
-
-/* Sottolineatura elegante */
-a.lang-link.active::after {
-    width: 100% !important;
-    background-color: #8c6f4d; /* Il tuo oro/bronzo */
-}
-
-/* Mostra la sottolineatura se attivo o al mouse sopra */
-.lang-link:hover::after,
-.lang-link.active::after {
-    width: 100%;
+    color: #ffffff;
 }
 
 /*Header*/
