@@ -48,27 +48,43 @@ window.addEventListener('load', function() {
     }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Aspettiamo che l'header venga caricato dallo script include-html
-    setTimeout(() => {
-        const currentPath = window.location.pathname;
-        const btnIt = document.getElementById('change-to-it');
-        const btnEn = document.getElementById('change-to-en');
+const handleLanguageLinks = () => {
+    const currentPath = window.location.pathname;
+    const btnIt = document.getElementById('change-to-it');
+    const btnEn = document.getElementById('change-to-en');
 
-        if (currentPath.includes('/it/')) {
-            // Siamo in italiano, il tasto EN deve portarci alla stessa pagina ma in /en/
-            if (btnEn) btnEn.href = currentPath.replace('/it/', '/en/');
-            if (btnIt) {
-                btnIt.href = "#"; 
-                btnIt.classList.add('active');
-            }
-        } else if (currentPath.includes('/en/')) {
-            // Siamo in inglese, il tasto IT deve portarci alla stessa pagina ma in /it/
-            if (btnIt) btnIt.href = currentPath.replace('/en/', '/it/');
-            if (btnEn) {
-                btnEn.href = "#";
-                btnEn.classList.add('active');
-            }
+    // Se i pulsanti non sono ancora nel DOM, usciamo e riproveremo
+    if (!btnIt || !btnEn) return false;
+
+    // Caso 1: Siamo in Inglese
+    if (currentPath.includes('/en/')) {
+        btnEn.classList.add('active');
+        btnEn.href = "#";
+        btnIt.href = currentPath.replace('/en/', '/it/');
+    } 
+    // Caso 2: Siamo in Italiano (cartella /it/ o root "/")
+    else {
+        btnIt.classList.add('active');
+        btnIt.href = "#";
+        // Se siamo nella root, il link EN deve andare esplicitamente a /en/
+        if (currentPath === "/" || currentPath === "/index.html") {
+            btnEn.href = "/en/index.html";
+        } else {
+            btnEn.href = currentPath.replace('/it/', '/en/');
         }
-    }, 600); 
-});
+    }
+    return true;
+};
+
+// Funzione che controlla finché l'header non è caricato
+const initLangSwitcher = () => {
+    const attempts = setInterval(() => {
+        const success = handleLanguageLinks();
+        if (success) clearInterval(attempts); // Se ha funzionato, ferma i tentativi
+    }, 100); // Controlla ogni 100ms
+
+    // Ferma i tentativi comunque dopo 3 secondi per non pesare sulla memoria
+    setTimeout(() => clearInterval(attempts), 3000);
+};
+
+document.addEventListener("DOMContentLoaded", initLangSwitcher);
