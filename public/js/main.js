@@ -53,6 +53,7 @@ const setupLanguageSwitcher = () => {
     const btnEn = document.getElementById('change-to-en');
     const currentPath = window.location.pathname;
 
+    // Se l'header non è ancora caricato, usciamo e riproviamo
     if (!btnIt || !btnEn) return false;
 
     // 1. Reset classi
@@ -62,33 +63,42 @@ const setupLanguageSwitcher = () => {
     // 2. Logica per Inglese
     if (currentPath.includes('/en/')) {
         btnEn.classList.add('active');
-        // Il tasto IT deve portarti alla stessa pagina in /it/
+        
+        // Il tasto IT sostituisce /en/ con /it/ per farti cambiare lingua
         btnIt.href = currentPath.replace('/en/', '/it/');
-        // Il tasto EN lo lasciamo cliccabile sulla home inglese o #
-        btnEn.href = "/en/index.html"; 
+        
+        // Il tasto EN viene "spento" perché sei già qui
+        btnEn.href = "javascript:void(0)"; 
     } 
-    // 3. Logica per Italiano
+    // 3. Logica per Italiano (Cartella /it/ o Home principale)
     else {
         btnIt.classList.add('active');
-        // Il tasto EN deve portarti alla stessa pagina in /en/
-        if (currentPath === "/" || currentPath.includes("index.html")) {
+        
+        // Logica per il tasto EN
+        if (currentPath === "/" || currentPath === "/index.html") {
             btnEn.href = "/en/index.html";
-        } else {
+        } else if (currentPath.includes('/it/')) {
             btnEn.href = currentPath.replace('/it/', '/en/');
+        } else {
+            // Sicurezza: se manca /it/ nel percorso, forziamo l'aggiunta di /en/
+            btnEn.href = "/en" + currentPath;
         }
-        btnIt.href = "/it/index.html";
+        
+        // Il tasto IT viene "spento" perché sei già qui
+        btnIt.href = "javascript:void(0)";
     }
-    return true;
+    
+    return true; // Finito con successo
 };
 
-// Avvio con controllo ripetuto (per via dell'include-html)
+// Avvio con controllo ripetuto (aspetta l'include-html)
 const startLangCheck = () => {
     let attempts = 0;
     const interval = setInterval(() => {
         const done = setupLanguageSwitcher();
         attempts++;
         if (done || attempts > 50) clearInterval(interval);
-    }, 100);
+    }, 100); // Riprova ogni 100 millisecondi (massimo 5 secondi)
 };
 
 document.addEventListener("DOMContentLoaded", startLangCheck);
