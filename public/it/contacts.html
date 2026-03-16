@@ -47,7 +47,8 @@
                     <input type="text" id="name" name="name" pattern="[A-Za-zÀ-ÿ\s]{2,}" title="Inserisci almeno 2 lettere. Non sono ammessi numeri o simboli." 
                         autocomplete="name" placeholder="Inserisci il tuo nome..." required>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Inserisci la tua email..." required>
+                    <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Inserisci un indirizzo email valido (es. mario123@email.com)" 
+                        placeholder="Inserisci la tua email..." autocomplete="email" required>
                     <label for="tel">Telefono:</label>
                     <input type="text" id="tel" name="tel" inputmode="tel" pattern="[0-9\s\-\+\(\)]{10,}" title="Inserisci un numero valido (es. +39 340 1234567)" 
                         placeholder="Inserisci il tuo numero di telefono..." autocomplete="tel" required>
