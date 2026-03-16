@@ -340,8 +340,13 @@ a[href^="tel:"] {
   background-color: #5e4427;
 }
 
-label, textarea, input {
+label {
   font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Font pulito per garantire la leggibilità di email e numeri di telefono */
+input, textarea {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 /*Gallery*/
