@@ -42,17 +42,22 @@
             <br>
             <div class="contacts-form-wrapper">
                 <p class="contacts-desc">Or leave your details here!</p>
-                <form action="https://formsubmit.co/jessica.jdled@gmail.com" method="POST" class="contacts-form" id="contacts-form">
+                <form action="https://formsubmit.co/benettinic00@gmail.com" method="POST" class="contacts-form" id="contacts-form">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name..." required>
+                    <input type="text" id="name" name="name" pattern="[A-Za-zÀ-ÿ\s]{2,}" title="Enter at least 2 letters. Numbers or symbols are not allowed." 
+                        autocomplete="name" placeholder="Enter your name..." required>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email..." required>
+                    <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Enter a valid email address (e.g., john@example.com)" 
+                        placeholder="Enter your email..." autocomplete="email" required>
                     <label for="tel">Phone:</label>
-                    <input type="text" id="tel" name="tel" placeholder="Enter your phone number..." required>
+                    <input type="text" id="tel" name="tel" inputmode="tel" pattern="[0-9\s\-\+\(\)]{10,}" title="Enter a valid phone number (e.g., +39 340 1234567)" 
+                        placeholder="Enter your phone number..." autocomplete="tel" required>
                     <label for="msg">Message:</label>
                     <textarea id="msg" name="msg" rows="5" placeholder="Write your message here..." required></textarea>
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://jdledprojectlux.web.app/contacts.html">
+                    <input type="hidden" name="_subject" value="Nuovo messaggio da JDLED Project Lux!">
+                    <input type="text" name="_honey" style="display:none">
                     <button type="submit">Send</button>
                 </form>
             </div>
