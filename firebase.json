@@ -6,9 +6,6 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "i18n": {
-      "root": "/"
-    },
     "errorPage": "/404.html",
     "headers": [
       {
