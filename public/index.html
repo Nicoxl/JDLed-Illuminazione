@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>JDLed Project Lux</title>
+    <meta name="robots" content="noindex">
+    
+    <script>
+        // Legge la lingua del browser
+        var userLang = navigator.language || navigator.userLanguage; 
+        
+        // Se inizia con "it", spara l'utente nella cartella /it/
+        if (userLang.startsWith('it')) {
+            window.location.replace("/it/");
+        } 
+        // Altrimenti, per tutto il resto del mondo, spara su /en/
+        else {
+            window.location.replace("/en/");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
