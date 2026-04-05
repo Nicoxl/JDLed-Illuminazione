@@ -46,7 +46,9 @@ document.addEventListener('DOMContentLoaded', function () {
     img.addEventListener('click', () => openLightbox(index));
   });
 
-  closeBtn.addEventListener('click', closeLightbox);
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeLightbox);
+  }
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) closeLightbox();
   });
