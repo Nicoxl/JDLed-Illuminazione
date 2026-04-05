@@ -1,10 +1,5 @@
 {
   "hosting": {
-    "redirects": [ {
-      "source": "/:path*",
-      "destination": "https://www.jdledprojectlux.com/:path",
-      "type": 301
-    } ],
     "public": "public",
     "ignore": [
       "firebase.json",
