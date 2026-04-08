@@ -49,11 +49,9 @@
           script.async = true;
           document.head.appendChild(script);
       }
-
       // 3. Aspetta che l'utente faccia qualcosa (scroll, click, ecc.) prima di caricarlo
       const interactionEvents = ['scroll', 'mousemove', 'touchstart', 'keydown'];
       let isLoaded = false;
-
       interactionEvents.forEach(event => {
           window.addEventListener(event, () => {
               if (!isLoaded) {
