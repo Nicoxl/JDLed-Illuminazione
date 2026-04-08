@@ -38,11 +38,17 @@ body {
 }
 
 .lang-link {
+    display: inline-flex;    /* Permette di applicare altezza, larghezza e centrare il testo */
+    align-items: center;     /* Centra il testo verticalmente nel riquadro */
+    justify-content: center; /* Centra il testo orizzontalmente */
+    min-width: 48px;         /* Dimensione minima cliccabile per Google */
+    min-height: 48px;        /* Dimensione minima cliccabile per Google */
+    padding: 8px 12px;       /* Spazio di respiro attorno al testo "IT" o "EN" */
     text-decoration: none;
-    color: #cccccc; /* Grigio chiaro per la lingua non attiva */
+    color: #cccccc;          /* Grigio chiaro per la lingua non attiva */
     font-weight: 400;
     font-family: 'Playfair Display', serif;
-    transition: 0.3s;
+    transition: all 0.3s ease; 
 }
 
 /* Lingua attiva: Bianca, Grassetto e Sottolineata */
@@ -96,15 +102,20 @@ nav {
 }
 
 .menu-toggle {
-  display: block;
+  /* 1. Layout interno e Touch Target (Regole PageSpeed) */
+  display: inline-flex;    /* Meglio di 'block' per centrare l'icona */
+  align-items: center;     /* Centra verticalmente */
+  justify-content: center; /* Centra orizzontalmente */
+  min-width: 48px;         /* Forza la larghezza minima per Google */
+  min-height: 48px;        /* Forza l'altezza minima per Google */
+  padding: 1rem;           /* Il tuo padding originale */
   align-self: flex-start;
+  flex-shrink: 0;
   font-size: 2rem;
   background: none;
   border: none;
   color: var(--background-color);
   cursor: pointer;
-  padding: 1rem;
-  flex-shrink: 0;
 }
 
 .menu li {
