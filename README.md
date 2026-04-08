@@ -1,4 +1,4 @@
-# 💡 JdLed Project Lux - Web App
+# 💡 JdLed Illuminazione - Web App
 
 Welcome to the official repository of **JdLed Illuminazione**, a digital platform dedicated to premium LED lighting solutions for interiors and exteriors.
 
