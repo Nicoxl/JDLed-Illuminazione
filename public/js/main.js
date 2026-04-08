@@ -24,6 +24,7 @@ function includeHTML() {
     }
   }
 }
+
 function aggiornaAnno() {
     const spanAnno = document.getElementById("current-year");
     if (spanAnno) {
@@ -56,9 +57,16 @@ const setupLanguageSwitcher = () => {
     // Se l'header non è ancora caricato, usciamo e riproviamo
     if (!btnIt || !btnEn) return false;
 
-    // 1. Reset classi
+    // 1. Reset classi e vecchi eventi
     btnIt.classList.remove('active');
     btnEn.classList.remove('active');
+    btnIt.onclick = null;
+    btnEn.onclick = null;
+
+    // Funzione fissa per bloccare il salto in alto della pagina quando si clicca il link disattivato
+    const preventJump = function(event) {
+        event.preventDefault();
+    };
 
     // 2. Logica per Inglese
     if (currentPath.includes('/en/')) {
@@ -67,8 +75,9 @@ const setupLanguageSwitcher = () => {
         // Il tasto IT sostituisce /en/ con /it/ per farti cambiare lingua
         btnIt.href = currentPath.replace('/en/', '/it/');
         
-        // Il tasto EN viene "spento" perché sei già qui
-        btnEn.href = "javascript:void(0)"; 
+        // Il tasto EN viene "spento" (SEO Friendly)
+        btnEn.href = "#"; 
+        btnEn.onclick = preventJump;
     } 
     // 3. Logica per Italiano (Cartella /it/ o Home principale)
     else {
@@ -76,7 +85,7 @@ const setupLanguageSwitcher = () => {
         
         // Logica per il tasto EN
         if (currentPath === "/" || currentPath === "/index.html") {
-            btnEn.href = "/en/index.html";
+            btnEn.href = "/en/"; // Più pulito di /en/index.html per la SEO
         } else if (currentPath.includes('/it/')) {
             btnEn.href = currentPath.replace('/it/', '/en/');
         } else {
@@ -84,8 +93,9 @@ const setupLanguageSwitcher = () => {
             btnEn.href = "/en" + currentPath;
         }
         
-        // Il tasto IT viene "spento" perché sei già qui
-        btnIt.href = "javascript:void(0)";
+        // Il tasto IT viene "spento" (SEO Friendly)
+        btnIt.href = "#";
+        btnIt.onclick = preventJump;
     }
     
     return true; // Finito con successo
