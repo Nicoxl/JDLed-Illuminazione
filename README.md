@@ -1,6 +1,6 @@
-# 💡 JdLed Illuminazione - Web App
+# 💡 JDLed Illuminazione - Web App
 
-Welcome to the official repository of **JdLed Illuminazione**, a digital platform dedicated to premium LED lighting solutions for interiors and exteriors.
+Welcome to the official repository of **JDLed Illuminazione**, a digital platform dedicated to premium LED lighting solutions for interiors and exteriors.
 
 🔗 **Live Website:** [https://jdledprojectlux.com/](https://jdledprojectlux.com/)
 
@@ -17,7 +17,7 @@ Welcome to the official repository of **JdLed Illuminazione**, a digital platfor
 ## ✨ Website Features
 
 * **Visual Product Gallery:** Intuitive navigation through various high-quality LED categories.
-* **Brand Legacy:** A dedicated section about the business evolution from Benetti Illuminazione to JdLed Illuminazione.
+* **Brand Legacy:** A dedicated section about the business evolution from Benetti Illuminazione to JDLed Illuminazione.
 * **Quick Access:** Direct links for Email, Phone, and physical office location in Cornedo Vicentino (VI), Italy.
 * **Responsive Design:** Fully optimized for a seamless experience on smartphones, tablets, and desktops.
 
