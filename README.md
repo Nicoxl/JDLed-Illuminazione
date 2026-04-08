@@ -1,12 +1,12 @@
 # 💡 JdLed Project Lux - Web App
 
-Welcome to the official repository of **JdLed Project Lux**, a digital platform dedicated to premium LED lighting solutions for interiors and exteriors.
+Welcome to the official repository of **JdLed Illuminazione**, a digital platform dedicated to premium LED lighting solutions for interiors and exteriors.
 
 🔗 **Live Website:** [https://jdledprojectlux.com/](https://jdledprojectlux.com/)
 
 ## 📖 Project Description
 
-**JdLed Project Lux** (formerly Benetti Illuminazione) combines technical expertise with the latest lighting design trends. This web application serves as a high-end digital showcase, allowing customers to explore lighting collections and request professional consultations.
+**JdLed Illuminazione (Project Lux)** (formerly Benetti Illuminazione) combines technical expertise with the latest lighting design trends. This web application serves as a high-end digital showcase, allowing customers to explore lighting collections and request professional consultations.
 
 ### 💡 Services and Products
 
@@ -17,7 +17,7 @@ Welcome to the official repository of **JdLed Project Lux**, a digital platform 
 ## ✨ Website Features
 
 * **Visual Product Gallery:** Intuitive navigation through various high-quality LED categories.
-* **Brand Legacy:** A dedicated section about the business evolution from Benetti Illuminazione to JdLed Project Lux.
+* **Brand Legacy:** A dedicated section about the business evolution from Benetti Illuminazione to JdLed Illuminazione.
 * **Quick Access:** Direct links for Email, Phone, and physical office location in Cornedo Vicentino (VI), Italy.
 * **Responsive Design:** Fully optimized for a seamless experience on smartphones, tablets, and desktops.
 
@@ -66,4 +66,4 @@ The project ensures transparency and user protection:
 * **Technical Developer:** [Nicola Benetti](https://github.com/Nicoxl)
 
 ---
-*Copyright © 2026 JdLed Project Lux - All rights reserved.*
+*Copyright © 2026 JdLed Illuminazione (Project Lux) - All rights reserved.*
