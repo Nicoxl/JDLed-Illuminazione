@@ -2,7 +2,7 @@
 
 Welcome to the official repository of **JdLed Project Lux**, a digital platform dedicated to premium LED lighting solutions for interiors and exteriors.
 
-🔗 **Live Website:** [https://jdledprojectlux.web.app/](https://jdledprojectlux.web.app/)
+🔗 **Live Website:** [https://jdledprojectlux.com/](https://jdledprojectlux.com/)
 
 ## 📖 Project Description
 
