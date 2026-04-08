@@ -6,7 +6,7 @@ Welcome to the official repository of **JDLed Illuminazione**, a digital platfor
 
 ## 📖 Project Description
 
-**JdLed Illuminazione (Project Lux)** (formerly Benetti Illuminazione) combines technical expertise with the latest lighting design trends. This web application serves as a high-end digital showcase, allowing customers to explore lighting collections and request professional consultations.
+**JDLed Illuminazione (Project Lux)** (formerly Benetti Illuminazione) combines technical expertise with the latest lighting design trends. This web application serves as a high-end digital showcase, allowing customers to explore lighting collections and request professional consultations.
 
 ### 💡 Services and Products
 
