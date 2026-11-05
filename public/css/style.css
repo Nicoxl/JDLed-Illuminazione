@@ -679,6 +679,10 @@ footer a {
         padding: 0;
     }
 
+    #shop {
+       width: 100%;
+    }
+
     /* --- CONTATTI --- */
     .contacts-grid {
       flex-direction: column; /* Impila info e form */
