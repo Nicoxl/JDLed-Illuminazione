@@ -680,7 +680,8 @@ footer a {
     }
 
     #shop {
-       width: 100%;
+       width: 100% !important;
+       height: auto;
     }
 
     /* --- CONTATTI --- */
