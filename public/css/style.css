@@ -232,6 +232,17 @@ h1.otherTitle {
   max-width: fit-content;
 }
 
+h2.otherSubtitle {
+  font-size: 1.8rem;
+  color:  #696969;
+  font-style: italic;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+  text-shadow: 0.5px 0.5px 1px #c4b494;
+  padding-left: 0.5rem;
+  border-left: 4px solid var(--primary-color);
+}
+
 #subtitle {
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     margin: 2rem 0;
@@ -487,6 +498,31 @@ input, textarea {
 .lightbox-prev:hover,
 .lightbox-next:hover {
   color: #ccc;
+}
+/*Stile immagini chi siamo*/
+.whoweare-image-button {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(140, 111, 77, 0.2);
+    margin-top: 1rem;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--background-color); 
+    color: #696969; 
+    font-family: 'Playfair Display', Georgia, serif;;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid #696969;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(230, 200, 117, 0.05);
+    cursor: pointer;
 }
 
 /*Footer*/

@@ -15,7 +15,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"> <!--Font Link-->
     <title>Who We Are | JDLed Illuminazione</title>
     <script src="/js/menu.js" defer></script>  <!--menù header-->
-    <script src="/js/lightbox.js"></script>  <!--lightbox galleria-->
+    <script src="/js/main.js" defer></script>  <!--funzioni js per funzionamento sito-->
+    <script src="/js/whoweare.js" defer></script> <!--funzione download con nome-->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0NZSTZY12"></script>
     <script>
@@ -24,7 +25,6 @@
       gtag('js', new Date());
       gtag('config', 'G-V0NZSTZY12');
     </script>
-    <script src="/js/main.js" defer></script>
 </head>
 <body>
     <div include-html="header.html"></div>
@@ -39,6 +39,25 @@
         wall lights, spotlights and lighting solutions to suit every style and requirement, along with a consultancy service to help you
         choose the perfect lighting for your home or business. </p><br>
         <p style="font-size: 1.25rem">We’re here to welcome you, offer advice and bring your projects to life with quality and professionalism. We look forward to seeing you!</p>
+        <br><br>
+        <h2 class="otherSubtitle">Our Shop</h2>
+        <img src="/images/insegna.jpg" alt="Insegna Negozio" style="width:40%;">
+        <br><br>
+        <h2 class="otherSubtitle">Everything you need to know about us, at a glance</h2>
+        <div style="display: flex; justify-content: space-evenly; flex-wrap: wrap; gap: 40px;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+                <img src="/images/volantino.jpg" alt="Volantino JDLed Illuminazione" style="width: 100%; max-width: 400px; margin-top: 1rem;">
+                <button onclick="DownloadWithFilename('/images/volantino.pdf', 'flyer_JDLed.pdf')" class="whoweare-image-button">
+                    Download Flyer (PDF)
+                </button>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+                <img src="/images/fronteBiglietto.jpg" alt="Biglietto da Visita JDLed Illuminazione" style="width: 100%; max-width: 400px; margin-top: 1rem;">
+                <button onclick="DownloadWithFilename('/images/bigliettoVisita.pdf', 'businessCard.pdf')" class="whoweare-image-button">
+                    Download Business Card (PDF)
+                </button>
+            </div>
+        </div>
     </main>
     <div include-html="footer.html"></div>
 </body>
