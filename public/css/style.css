@@ -396,6 +396,7 @@ a[href^="mailto:"]:hover {
   width: 100%;
   max-width: 100%;
   padding: 0.7rem;
+  resize: none;
   border: 1px solid #c5b59a;
   border-radius: 0.3rem;
   background-color: #fffaf5;
