@@ -31,38 +31,45 @@
         <h1 class="otherTitle">Contacts</h1>
         <p class="contacts-desc">Do you need information? Write to us or come visit us.</p>
         <div class="contacts-grid">
-            <div class="contacts-info">
-                <p><strong>Email:</strong> jessica.jdled@gmail.com</p>
-                <p><strong>Certified Email (PEC):</strong> jdled@pec.it</p>
-                <p><strong>SDI code:</strong> 6JXPS2J</p>
-                <p><strong>VAT Number: </strong> 04585400247</p>
-                <p><strong>Company Registry Office:</strong> Company Register of the Vicenza Chamber of Commerce</p>
-                <p><strong>REA registration number: </strong> VI-415001</p>
-                <p><strong>Mobile Phone:</strong> +39 346 8386491</p>
-                <p><strong>Registered Address:</strong> Località Campagna n.50, 36078 Valdagno (VI)</p>
-                <p><strong>Operational Address:</strong> <i>(Formerly Benetti Illuminazione)</i><br>Via Monte Cimone n.15/b, 36073 Cornedo Vicentino (VI)</p>
-            </div>
-            <br>
-            <div class="contacts-form-wrapper">
-                <p class="contacts-desc">Or leave your details here!</p>
-                <form action="https://formsubmit.co/jessica.jdled@gmail.com" method="POST" class="contacts-form" id="contacts-form">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" pattern="[A-Za-zÀ-ÿ\s]{2,}" title="Enter at least 2 letters. Numbers or symbols are not allowed." 
-                        autocomplete="name" placeholder="Enter your name..." required>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Enter a valid email address (e.g., john@example.com)" 
-                        placeholder="Enter your email..." autocomplete="email" required>
-                    <label for="tel">Phone:</label>
-                    <input type="text" id="tel" name="tel" inputmode="tel" pattern="[0-9\s\-\+\(\)]{10,}" title="Enter a valid phone number (e.g., +39 340 1234567)" 
-                        placeholder="Enter your phone number..." autocomplete="tel" required>
-                    <label for="msg">Message:</label>
-                    <textarea id="msg" name="msg" rows="5" placeholder="Write your message here..." required></textarea>
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://jdledprojectlux.web.app/contacts.html">
-                    <input type="hidden" name="_subject" value="Nuovo messaggio da JDLED Project Lux!">
-                    <input type="text" name="_honey" style="display:none">
-                    <button type="submit">Send</button>
-                </form>
+            <div class="contacts-grid">
+                <div class="contacts-info">
+                    <h3 class="title-recapiti">Direct Contact Details</h3>
+                    <p><strong>Mobile Phone:</strong> <a href="tel:+393468386491">+39 346 8386491</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:jessica.jdled@gmail.com">jessica.jdled@gmail.com</a></p>
+                    <p><strong>Operating Office:</strong> <br>Via Monte Cimone n.15/b, 36073 Cornedo Vicentino (VI)<i>(Ex Benetti Illuminazione)</i></p>
+                    <p><strong>Registered Office:</strong> <br>Località Campagna n.50, 36078 Valdagno (VI)</p>
+
+                    <hr style="border: 0; border-top: 1px solid rgba(140, 111, 77, 0.2); margin: 20px 0;">
+
+                    <h3 class="title-societari">Company Details</h3>
+                    <p><strong>VAT number:</strong> 04585400247</p>
+                    <p><strong>Certified Email (PEC):</strong> <a href="mailto:jdled@pec.it">jdled@pec.it</a></p>
+                    <p><strong>SDI code:</strong> 6JXPS2J</p>
+                    <p><strong>Company Registry Office:</strong> Vicenza Chamber of Commerce and Industry </p>
+                    <p><strong>REA registration number:</strong> VI-415001</p>
+                </div>
+
+                <div class="contacts-form-wrapper">
+                    <h3 class="title-recapiti">Send us a Message and we’ll get back to you!</h3>
+                    <form action="https://formsubmit.co/benettinic00@gmail.com" method="POST" class="contacts-form" id="contacts-form">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" pattern="[A-Za-zÀ-ÿ\s]{2,}" title="Please enter at least 2 letters. Numbers and symbols are not permitted." 
+                            autocomplete="name" placeholder="Enter your name..." required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address (e.g. mario123@email.com)" 
+                            placeholder="Enter your email address..." autocomplete="email" required>
+                        <label for="tel">Mobile Phone:</label>
+                        <input type="text" id="tel" name="tel" inputmode="tel" pattern="[0-9\s\-\+\(\)]{10,}" title="Please enter a valid number (e.g. +39 340 1234567)" 
+                            placeholder="Enter your mobile phone number..." autocomplete="tel" required>
+                        <label for="msg">Message Text:</label>
+                        <textarea id="msg" name="msg" rows="5" placeholder="Write here the message..." required></textarea>
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://jdledprojectlux.com/en/contacts.html">
+                        <input type="hidden" name="_subject" value="Nuovo messaggio da JDLED Project Lux!">
+                        <input type="text" name="_honey" style="display:none">
+                        <button type="submit">Invia</button>
+                    </form>
+                </div>
             </div>
         </div>
         <br>
@@ -70,45 +77,6 @@
         </div>
     </main>
     <div include-html="footer.html"></div>
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const form = document.getElementById('contacts-form');
-        const msg = document.getElementById('form-msg');
-
-        // Mostra messaggio di successo se presente in localStorage (post-redirect)
-        if (localStorage.getItem("formInviato") === "true") {
-        msg.textContent = "Message sent successfully!";
-        msg.style.color = "green";
-        msg.style.display = "block";
-        msg.style.marginLeft = "auto";
-        localStorage.removeItem("formInviato"); // pulizia dopo visualizzazione
-        }
-
-        // Controlla i campi prima dell'invio
-        if (form) {
-        form.addEventListener('submit', function (e) {
-            const nome = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const telefono = document.getElementById('tel').value.trim();
-            const messaggio = document.getElementById('msg').value.trim();
-
-            if (!nome || !email || !telefono || !messaggio) {
-            e.preventDefault();
-            msg.textContent = "Please fill in all the fields before submitting.";
-            msg.style.color = "red";
-            msg.style.display = "block";
-            msg.style.marginLeft = "auto";
-            } else {
-            // Salva il flag per mostrare il messaggio dopo redirect
-            localStorage.setItem("formInviato", "true");
-            msg.textContent = "Sending message...";
-            msg.style.color = "green";
-            msg.style.display = "block";
-            msg.style.marginLeft = "auto";
-            }
-        });
-        }
-    });
-    </script>
+    <script src="/js/contacts.js"></script> <!-- Contact form scripts -->
 </body>
 </html>

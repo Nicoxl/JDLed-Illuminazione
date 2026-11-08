@@ -182,7 +182,7 @@ body.home main::before {
   top: 0; left: 0; right: 0; bottom: 0;
   background: url("../images/logo.jpg") no-repeat center center;
   background-size: contain;
-  opacity: 0.08;
+  opacity: 0.15;
   z-index: -1; /* Assicura che stia dietro al testo */
   pointer-events: none;
 }
@@ -287,12 +287,25 @@ h2.otherSubtitle {
 /*Contacts*/
 .contacts-grid {
   display: flex;
-  flex-wrap: wrap; /* Permette di andare a capo su schermi piccoli */
-  gap: 3rem;
-  justify-content: center; /* Centra il contenuto */
+  flex-wrap: wrap; 
+  justify-content: space-between; 
   align-items: flex-start;
   margin-top: 2rem;
   width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+.contacts-info,
+.contacts-form-wrapper {
+  flex: 1 1 320px; 
+  max-width: 500px;
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.5); 
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .contacts-desc {
@@ -303,38 +316,61 @@ h2.otherSubtitle {
 }
 
 .contacts-info {
-  flex: 1 1 300px; /* Si allarga ma non scende sotto 300px */
-  max-width: 500px;
-  font-size: 1.2rem;
-  padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.5); /* Pulizia visiva */
-  border-radius: 8px;
-}
-
-a[href^="tel:"] {
-    color: var(--primary-color); 
-    text-decoration: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .contacts-form-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1 1 350px; /* Il form prende spazio ma va a capo se serve */
-  max-width: 600px;
-  margin: 0 auto; 
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.contacts-info a {
+  color: #8c6f4d;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contacts-info a:hover {
+  color: #a4825b;
+  text-decoration: underline;
+}
+
+.contacts-info h3,
+.contacts-form-wrapper h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.title-recapiti, 
+.title-societari {
+  color: #b67b0d;
+}
+
+a[href^="tel:"],
+a[href^="mailto:"] {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a[href^="tel:"]:hover,
+a[href^="mailto:"]:hover {
+  color: #a4825b;
+  text-decoration: underline;
 }
 
 .contacts-form {
-    width: 100%;
-    font-size: 1.2rem;
+  width: 100%;
+  font-size: 1.2rem;
 }
 
 .contacts-form label {
   display: block;
   margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   font-weight: bold;
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
 .contacts-form input,
@@ -344,10 +380,12 @@ a[href^="tel:"] {
   border: 1px solid #c5b59a;
   border-radius: 0.3rem;
   background-color: #fffaf5;
-  font-family: inherit;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  box-sizing: border-box;
 }
 
 .contacts-form button {
+  width: 100%;
   margin-top: 1.5rem;
   padding: 0.8rem 1.5rem;
   background-color: #7a5a32;
@@ -356,19 +394,11 @@ a[href^="tel:"] {
   border-radius: 0.3rem;
   font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.25s ease;
 }
 
 .contacts-form button:hover {
   background-color: #5e4427;
-}
-
-label {
-  font-family: 'Playfair Display', Georgia, serif;
-}
-
-/* Font pulito per garantire la leggibilità di email e numeri di telefono */
-input, textarea {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 /*Gallery*/
@@ -588,6 +618,16 @@ footer a {
     to { opacity: 1; }   /* Diventa visibile */
 }
 
+/*Media Query per disattivare sfondo logo su schermi più piccoli (tablet e mobile)*/
+@media (max-width: 1450px) {
+  body.contacts main::before,
+  main:has(.contacts-grid)::before {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+}
+
 /*Media Query Mobile Devices*/
 @media (max-width: 1024px) {
     /* --- TITOLI E TESTI --- */
@@ -686,18 +726,82 @@ footer a {
 
     /* --- CONTATTI --- */
     .contacts-grid {
-      flex-direction: column; /* Impila info e form */
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       gap: 2rem;
-    }
-
-    .contacts-desc {
-      text-align: center;
-    }
-
-    .contacts-form-wrapper {
+      margin-top: 1.5rem;
       width: 100%;
-      margin-top: 2rem; 
-      margin-left: 0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Schede: piena larghezza del contenitore */
+    .contacts-info,
+    .contacts-form-wrapper {
+      flex: 1 1 100%;
+      max-width: 100%;
+      width: 100%;
+      font-size: 1.05rem;
+      padding: 1.25rem;
+    }
+
+    /* Testo descrittivo */
+    .contacts-desc {
+      font-size: 1.1rem;
+      margin: 1.5rem 0 1rem 0;
+      padding: 0 10px;
+    }
+
+    /* Titoli delle sezioni */
+    .contacts-info h3,
+    .contacts-form-wrapper h3,
+    .title-recapiti,
+    .title-societari {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    /* Form */
+    .contacts-form {
+      font-size: 1rem;
+    }
+
+    .contacts-form label {
+      font-size: 0.95rem;
+      margin-top: 0.8rem;
+      margin-bottom: 0.3rem;
+    }
+
+    /* Campi input e textarea: dimensione controllata */
+    .contacts-form input,
+    .contacts-form textarea {
+      font-size: 14px;
+      padding: 0.65rem;
+    }
+
+    /* Testo del placeholder più piccolo e discreto */
+    .contacts-form input::placeholder,
+    .contacts-form textarea::placeholder {
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    .contacts-form textarea {
+      min-height: 100px;
+    }
+
+    .contacts-form button {
+      font-size: 1rem;
+      padding: 0.75rem 1.2rem;
+      margin-top: 1.2rem;
+    }
+
+    /* Messaggio esito invio */
+    #form-msg {
+      font-size: 0.95rem;
+      margin-top: 12px;
     }
 
     /* --- GALLERY --- */
