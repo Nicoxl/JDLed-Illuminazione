@@ -179,11 +179,14 @@ main {
 body.home main::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: url("../images/logo.jpg") no-repeat center center;
-  background-size: contain;
+  background-size: min(85%, 650px) auto; /* Non taglia i bordi ed evita che sgrani */
   opacity: 0.15;
-  z-index: -1; /* Assicura che stia dietro al testo */
+  z-index: -1;
   pointer-events: none;
 }
 
@@ -285,6 +288,20 @@ h2.otherSubtitle {
 }
 
 /*Contacts*/
+body.contacts main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../images/logo.jpg") no-repeat center 80px;
+  background-size: clamp(450px, 45vw, 850px) auto;
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
+
 .contacts-grid {
   display: flex;
   flex-wrap: wrap; 
@@ -377,6 +394,7 @@ a[href^="mailto:"]:hover {
 .contacts-form input,
 .contacts-form textarea {
   width: 100%;
+  max-width: 100%;
   padding: 0.7rem;
   border: 1px solid #c5b59a;
   border-radius: 0.3rem;
