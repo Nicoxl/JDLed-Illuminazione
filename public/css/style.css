@@ -402,11 +402,13 @@ a[href^="mailto:"]:hover {
 }
 
 #form-msg {
-  display: none;
-  margin-top: 15px;
-  font-size: 0.95rem;
-  font-weight: 600;
+  display: block;
+  margin: 1.2rem auto 0 auto;
   text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  clear: both;
 }
 
 /*Gallery*/
