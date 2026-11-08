@@ -409,7 +409,7 @@ a[href^="mailto:"]:hover {
   font-weight: 600;
   width: 100%;
   clear: both;
-}
+} 
 
 /*Gallery*/
 .gallery {
