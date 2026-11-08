@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         msg.style.marginTop = '15px';
         msg.style.fontWeight = 'bold';
         msg.style.textAlign = 'center';
-        form.parentNode.appendChild(msg);
+        form.appendChild(msg);
     }
 
     // Rileva la lingua (dall'attributo lang di <html>, dall'URL o dalle impostazioni del browser)
@@ -64,8 +64,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
         el.addEventListener('input', function () {
             el.setCustomValidity('');
+            if (msg && msg.style.color === 'rgb(220, 53, 69)') {
+                msg.style.display = 'none';
+            }
         });
     });
+
+    // Se un campo blocca l'invio via HTML5, mostra comunque il testo rosso in basso
+    if (form) {
+        form.addEventListener('invalid', function () {
+            if (msg) {
+                msg.textContent = t.emptyForm;
+                msg.style.color = "#dc3545";
+                msg.style.display = "block";
+            }
+        }, true);
+    }
 
     // Mostra il messaggio di successo se presente il flag in localStorage dopo il redirect
     if (localStorage.getItem("formInviato") === "true" && msg) {
@@ -78,10 +92,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Gestione invio e validazione form
     if (form) {
         form.addEventListener('submit', function (e) {
-            const nome = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const telefono = document.getElementById('tel').value.trim();
-            const messaggio = document.getElementById('msg').value.trim();
+            const nome = document.getElementById('name') ? document.getElementById('name').value.trim() : '';
+            const email = document.getElementById('email') ? document.getElementById('email').value.trim() : '';
+            const telefono = document.getElementById('tel') ? document.getElementById('tel').value.trim() : '';
+            const messaggio = document.getElementById('msg') ? document.getElementById('msg').value.trim() : '';
 
             if (!nome || !email || !telefono || !messaggio) {
                 e.preventDefault();

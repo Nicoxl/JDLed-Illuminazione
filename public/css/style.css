@@ -401,6 +401,14 @@ a[href^="mailto:"]:hover {
   background-color: #5e4427;
 }
 
+#form-msg {
+  display: none;
+  margin-top: 15px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+}
+
 /*Gallery*/
 .gallery {
   width: 100%;
