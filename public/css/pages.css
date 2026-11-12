@@ -2,55 +2,177 @@
    GALLERIA, LIGHTBOX, CHI SIAMO E POLICY
    ========================================= */
 
-/* Policy Pages */
+main:has(.policy-list) {
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 3.5rem;
+}
+
+.policy-header {
+    width: 100%;
+    max-width: 960px;
+    margin: 0.5rem auto 2.5rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.policy-header h1.otherTitle {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(2.3rem, 4.8vw, 3.8rem);
+    color: var(--primary-color);
+    border-bottom: none;
+    padding-bottom: 0;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 0.5px;
+    line-height: 1.15;
+    text-shadow: 1px 1px 2px rgba(217, 203, 191, 0.7);
+}
+
+.policy-kicker {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+    color: #b67b0d;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: 0.9rem auto 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.policy-kicker::before,
+.policy-kicker::after {
+    content: "";
+    display: inline-block;
+    width: 34px;
+    height: 1px;
+    background-color: #b67b0d;
+    opacity: 0.75;
+    flex-shrink: 0;
+}
+
+/* Scheda contenitore dei testi legali */
+.policy-list {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2.5rem 2.75rem;
+    background-color: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(182, 123, 13, 0.22);
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(140, 111, 77, 0.06);
+    text-align: left;
+}
+
+.policy-list .policy-intro {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.08rem, 1.4vw, 1.22rem);
+    font-style: italic;
+    color: #4a3f35;
+    line-height: 1.8;
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 2rem;
+    border-left: 3px solid #b67b0d;
+    background-color: rgba(253, 247, 238, 0.65);
+    border-radius: 0 6px 6px 0;
+}
+
 .policy-list h2 {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.55rem;
+    font-size: clamp(1.35rem, 2vw, 1.65rem);
     font-weight: 700;
     color: var(--primary-color);
-    margin-top: 1.8rem;
-    margin-bottom: 0.6rem;
+    margin-top: 2.2rem;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid rgba(182, 123, 13, 0.3);
+}
+
+.policy-list h2:first-child {
+    margin-top: 0;
 }
 
 .policy-list h3 {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.15rem;
+    font-size: 1.18rem;
     font-weight: 600;
-    color: var(--secondary-color);
-    margin-top: 1.2rem;
-    margin-bottom: 0.4rem;
+    color: #b67b0d;
+    margin-top: 1.4rem;
+    margin-bottom: 0.5rem;
 }
 
 .policy-list p {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 400;
-    color: var(--text-color);
-    line-height: 1.75;
+    color: #4a3f35;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    text-shadow: none;
+}
+
+.policy-list strong,
+.policy-list b {
+    color: var(--primary-color);
+    font-weight: 700;
 }
 
 .policy-list a {
-    color: var(--secondary-color);
+    color: #b67b0d;
     font-weight: 600;
     text-decoration: none;
+    border-bottom: 1px solid rgba(182, 123, 13, 0.35);
+    transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .policy-list a:hover {
-    text-decoration: underline;
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
 }
 
 .policy-internal-list {
-    list-style-position: inside;
+    list-style-position: outside;
+    margin-left: 1.5rem;
+    margin-bottom: 1.2rem;
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1rem;
+    font-size: 1.03rem;
     font-weight: 400;
-    line-height: 1.8;
-    margin-bottom: 1rem;
+    color: #4a3f35;
+    line-height: 1.85;
 }
 
-.policy-internal-list a {
-    color: var(--secondary-color);
-    font-weight: 600;
+.policy-internal-list li {
+    margin-bottom: 0.35rem;
+}
+
+.policy-internal-list li::marker {
+    color: #b67b0d;
+}
+
+@media (max-width: 1024px) {
+    .policy-kicker {
+        letter-spacing: 2.5px;
+        gap: 0.5rem;
+    }
+
+    .policy-kicker::before,
+    .policy-kicker::after {
+        display: none;
+    }
+
+    .policy-list {
+        padding: 1.6rem 1.25rem;
+    }
+
+    .policy-list h2 {
+        margin-top: 1.75rem;
+    }
 }
 
 /* =========================================
@@ -258,77 +380,221 @@
 }
 
 /* =========================================
-   GALLERY (Interni ed Esterni)
+   GALLERY 
    ========================================= */
 
-.gallery {
+.catalog-header {
     width: 100%;
-    padding: 32px 20px;
-    margin-bottom: 2rem;
-    background-color: rgba(255, 255, 255, 0.45);
-    border: 1px solid rgba(182, 123, 13, 0.15);
-    border-radius: 12px;
-}
-
-.gallery .section-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-    font-weight: 700;
-    text-align: left;
-    margin-bottom: 1.5rem;
-    color: var(--primary-color);
-    text-shadow: none;
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 0.3rem;
-    display: inline-block;
-}
-
-.gallery-subtitle {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: #5c5248;
-    font-style: italic;
-    margin-top: -0.5rem;
-    margin-bottom: 2rem;
-    text-shadow: none;
-    padding-left: 0.85rem;
-    border-left: 3px solid var(--secondary-color);
-}
-
-.gallery-grid {
+    max-width: 1120px;
+    margin: 0.5rem auto 2.5rem auto;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 22px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.gallery-item {
-    flex: 1 1 calc(25% - 40px);
-    max-width: 300px;
+.catalog-header h1.otherTitle {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--primary-color);
+    border-bottom: none;
+    padding-bottom: 0;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+    text-shadow: 1px 1px 2px rgba(217, 203, 191, 0.7);
+}
+
+.catalog-kicker {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+    color: #b67b0d;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: 0.9rem auto 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.catalog-kicker::before,
+.catalog-kicker::after {
+    content: "";
+    display: inline-block;
+    width: 34px;
+    height: 1px;
+    background-color: #b67b0d;
+    opacity: 0.75;
+    flex-shrink: 0;
+}
+
+/* Schede Categoria (Sospensioni, Applique, Lampioni, ecc.) */
+main:has(.catalog-header) .gallery {
+    width: 100%;
+    max-width: 1120px;
+    padding: 2.25rem 2rem;
+    margin: 0 auto 2.8rem auto;
+    background-color: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(182, 123, 13, 0.22);
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(140, 111, 77, 0.06);
+    text-align: center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+main:has(.catalog-header) .gallery:hover {
+    border-color: rgba(182, 123, 13, 0.5);
+    box-shadow: 0 12px 28px rgba(182, 123, 13, 0.14);
+}
+
+/* Titolo Categoria dentro la scheda */
+main:has(.catalog-header) .gallery-subtitle {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 700;
+    font-style: normal;
+    color: var(--primary-color);
+    margin: 0 auto 2rem auto;
+    padding: 0 0 0.4rem 0;
+    border-left: none;
+    border-bottom: 2px solid #b67b0d;
+    display: inline-block;
+    text-align: center;
+    text-shadow: none;
+}
+
+/* Griglia 3x3 perfetta su Desktop */
+main:has(.catalog-header) .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+main:has(.catalog-header) .gallery-item {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 4 / 3;
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid rgba(182, 123, 13, 0.2);
+    background-color: #f7efe4;
+    border: 1px solid rgba(182, 123, 13, 0.25);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     cursor: pointer;
 }
 
-.gallery-item img {
+main:has(.catalog-header) .gallery-item img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
     transition: transform 0.35s ease;
 }
 
-.gallery-item:hover {
+main:has(.catalog-header) .gallery-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(182, 123, 13, 0.18);
-    border-color: var(--secondary-color);
+    box-shadow: 0 12px 24px rgba(182, 123, 13, 0.22);
+    border-color: #b67b0d;
 }
 
-.gallery-item:hover img {
-    transform: scale(1.04);
+main:has(.catalog-header) .gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Box finale CTA */
+.catalog-cta-box {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0.5rem auto 2.5rem auto;
+    padding: 2.2rem 2rem;
+    background-color: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(182, 123, 13, 0.22);
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(140, 111, 77, 0.06);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+.catalog-cta-box p {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+    font-style: italic;
+    color: #4a3f35;
+    line-height: 1.75;
+    max-width: 780px;
+    margin: 0;
+}
+
+.catalog-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    background-color: #b67b0d;
+    color: #ffffff;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-decoration: none;
+    border: 2px solid #b67b0d;
+    border-radius: 6px;
+    transition: transform 0.2s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.catalog-cta-btn:hover {
+    background-color: #9e690a;
+    border-color: #9e690a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(182, 123, 13, 0.3);
+}
+
+/* Tablet (2 colonne) */
+@media (min-width: 600px) and (max-width: 1024px) {
+    main:has(.catalog-header) .gallery-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 18px;
+    }
+}
+
+/* Mobile (1 colonna) */
+@media (max-width: 599px) {
+    .catalog-kicker {
+        letter-spacing: 2.5px;
+        gap: 0.5rem;
+    }
+
+    .catalog-kicker::before,
+    .catalog-kicker::after {
+        display: none;
+    }
+
+    main:has(.catalog-header) .gallery {
+        padding: 1.5rem 1rem;
+        margin-bottom: 1.8rem;
+    }
+
+    main:has(.catalog-header) .gallery-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+
+    .catalog-cta-box {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .catalog-cta-btn {
+        width: 100%;
+        max-width: 320px;
+    }
 }
 
 /* =========================================

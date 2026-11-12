@@ -9,14 +9,62 @@ main:has(.contacts-grid)::before {
     content: none !important;
 }
 
+body.contacts main {
+    align-items: center;
+}
+
+body.contacts h1.otherTitle {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--primary-color);
+    border-bottom: none;
+    padding-bottom: 0;
+    margin: 0.5rem auto 0.6rem auto;
+    text-align: center;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+    text-shadow: 1px 1px 2px rgba(217, 203, 191, 0.7);
+}
+
 .contacts-desc {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(1.4rem, 2.2vw, 1.85rem);
     font-weight: 600;
-    color: var(--primary-color);
-    margin: 1rem auto 2.5rem auto;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: #b67b0d;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0.5rem auto 2.5rem auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     text-align: center;
-    max-width: 800px;
+    max-width: 900px;
+}
+
+.contacts-desc::before,
+.contacts-desc::after {
+    content: "";
+    display: inline-block;
+    width: 34px;
+    height: 1px;
+    background-color: #b67b0d;
+    opacity: 0.75;
+    flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+    .contacts-desc {
+        letter-spacing: 2px;
+        font-size: 1rem;
+        margin: 0.5rem auto 1.75rem auto;
+    }
+
+    .contacts-desc::before,
+    .contacts-desc::after {
+        display: none;
+    }
 }
 
 /* Griglia riposizionata: centrata ed equilibrata */
@@ -194,12 +242,6 @@ a[href^="mailto:"]:hover {
 
     .contacts-info a:hover {
         transform: none;
-    }
-
-    .contacts-desc {
-        font-size: 1.45rem;
-        margin: 1rem 0 1.5rem 0;
-        padding: 0 10px;
     }
 
     .contacts-info h3,
