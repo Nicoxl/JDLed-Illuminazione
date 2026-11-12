@@ -51,14 +51,14 @@ function evidenziaPaginaAttiva() {
 // Esecuzione
 document.addEventListener('DOMContentLoaded', includeHTML);
 
-// Preloader
-window.addEventListener('load', function() {
+// Preloader veloce (non blocca l'LCP)
+document.addEventListener('DOMContentLoaded', function() {
     const preloader = document.getElementById('preloader');
     if (preloader) {
         preloader.classList.add('loaded');
         setTimeout(() => {
             preloader.style.display = 'none';
-        }, 500);
+        }, 200);
     }
 });
 
