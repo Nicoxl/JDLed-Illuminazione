@@ -1,5 +1,6 @@
 /* =========================================
    HEADER, NAVIGAZIONE, LANG SWITCHER, FOOTER
+   Coordinati con il nuovo design del sito
    ========================================= */
 
 header {
@@ -7,78 +8,34 @@ header {
     color: var(--background-color);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     height: auto;
-    padding: 0.5rem 1rem;
+    padding: 0.65rem 1.5rem 0.85rem 1.5rem;
+    border-bottom: 2px solid rgba(182, 123, 13, 0.55);
+    box-shadow: 0 4px 16px rgba(60, 44, 28, 0.14);
+    position: relative;
+    z-index: 100;
 }
 
 .top-bar {
     display: flex;
     align-items: center;
     width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
     overflow: hidden;
-}
-
-/* Pulsante Cambio Lingua */
-.lang-switcher {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-left: 15px;
-}
-
-.lang-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 48px;
-    min-height: 48px;
-    padding: 8px 12px;
-    text-decoration: none;
-    color: #cccccc;
-    font-weight: 400;
-    font-family: 'Playfair Display', serif;
-    transition: all 0.3s ease;
-}
-
-.lang-link.active {
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    border-bottom: 2px solid var(--primary-color);
-}
-
-.lang-link:hover {
-    color: #ffffff;
 }
 
 /* Navigazione */
 nav {
     width: 100%;
-}
-
-nav a {
-    position: relative;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0%;
-    height: 2px;
-    background-color: #b67b0d;
-    transition: width 0.3s ease;
-}
-
-nav a:hover {
-    color: #b67b0d;
-}
-
-nav a:hover::after {
-    width: 100%;
+    max-width: 1280px;
+    margin: 0.25rem auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(253, 247, 238, 0.18);
+    padding-top: 0.55rem;
 }
 
 .menu {
@@ -86,10 +43,9 @@ nav a:hover::after {
     flex-direction: column;
     list-style: none;
     gap: 10px;
-    background-color: var(--primary-color);
+    background-color: transparent;
     width: 100%;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 0.5rem 0;
     margin: 0;
 }
 
@@ -103,121 +59,97 @@ nav a:hover::after {
     justify-content: center;
     min-width: 48px;
     min-height: 48px;
-    padding: 1rem;
-    align-self: flex-start;
+    padding: 0.5rem 0.85rem;
     flex-shrink: 0;
-    font-size: 2rem;
+    font-size: 1.85rem;
     background: none;
-    border: none;
+    border: 1px solid rgba(253, 247, 238, 0.25);
+    border-radius: 6px;
     color: var(--background-color);
     cursor: pointer;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.menu-toggle:hover {
+    background-color: rgba(253, 247, 238, 0.12);
+    border-color: #b67b0d;
 }
 
 .menu li {
-    font-size: medium;
-    padding: 0 1rem;
+    font-size: 1.05rem;
+    padding: 0 0.75rem;
 }
 
 .menu a {
+    position: relative;
+    display: inline-block;
     text-decoration: none;
     color: var(--background-color);
-    padding: 5px 10px;
-    border-radius: 3px;
-    transition: background-color 0.3s ease;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    padding: 6px 4px;
+    border-radius: 0;
+    background-color: transparent !important;
+    transition: color 0.25s ease;
 }
 
-.menu a:hover {
-    background-color: var(--background-color);
-    color: var(--primary-color);
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #b67b0d;
+    transition: width 0.3s ease;
 }
 
-/* Testo scorrevole */
-.scrolling-text {
-    overflow: hidden;
-    white-space: nowrap;
+.menu a:hover,
+.menu a[aria-current="page"] {
+    color: #ffffff;
+}
+
+.menu a[aria-current="page"] {
+    font-weight: 600;
+}
+
+.menu a:hover::after,
+.menu a[aria-current="page"]::after {
     width: 100%;
-    flex: 1;
 }
 
-.scrolling-text h2 {
-    display: inline-block;
-    padding-left: 100%;
-    animation: scroll-left 15s linear infinite;
-    font-size: 1.5rem;
-    margin: 0.5rem 0;
-}
-
-@keyframes scroll-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-/* Footer */
-footer {
-    background-color: var(--primary-color);
-    color: var(--background-color);
-    text-align: center;
+/* Pulsante Cambio Lingua (Bianco grassetto per la lingua attiva) */
+.lang-switcher {
+    display: inline-flex;
     align-items: center;
-    padding: 10px 0;
+    gap: 6px;
+    margin-left: auto;
+    padding-left: 1rem;
     flex-shrink: 0;
-    position: relative;
-    z-index: 1;
 }
 
-footer p {
-    padding-top: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
+.lang-separator {
+    color: rgba(253, 247, 238, 0.4);
+    user-select: none;
 }
 
-footer a {
-    color: var(--background-color);
+.lang-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    min-height: 38px;
+    padding: 4px 8px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    font-size: 0.98rem;
+    letter-spacing: 0.8px;
+    font-family: 'Playfair Display', Georgia, serif;
+    transition: color 0.25s ease, border-color 0.25s ease;
 }
 
-/* Mobile Menu */
-@media (max-width: 1024px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        margin: 0 auto;
-    }
-
-    .menu-toggle {
-        display: block;
-        margin-left: 0;
-    }
-
-    .menu {
-        padding: 1rem;
-    }
-
-    .menu a {
-        font-size: 1rem;
-        width: 100%;
-        display: block;
-        padding: 0;
-    }
-
-    #shop {
-        width: 100% !important;
-        height: auto;
-    }
-}
-
-/* PWA Desktop Window Controls Overlay */
-@media (display-mode: window-controls-overlay) {
-    header {
-        padding-right: env(titlebar-area-x, 0);
-        -webkit-app-region: drag;
-    }
-
-    header button,
-    header a,
-    header nav {
-        -webkit-app-region: no-drag;
-    }
-}
- /* Stato attivo in bianco grassetto per il selettore lingua */
 .lang-switcher .lang-link[data-lang-active="true"],
 .lang-switcher .lang-link.active {
     color: #ffffff !important;
@@ -234,4 +166,161 @@ footer a {
 
 .lang-switcher .lang-link:hover {
     color: #ffffff !important;
+}
+
+/* Testo scorrevole */
+.scrolling-text {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    flex: 1;
+    margin-left: 0.75rem;
+}
+
+.scrolling-text h2 {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 18s linear infinite;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    color: var(--background-color);
+    margin: 0.35rem 0;
+}
+
+/* =========================================
+   FOOTER COORDINATO
+   ========================================= */
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    text-align: center;
+    padding: 1.75rem 1.25rem;
+    border-top: 2px solid rgba(182, 123, 13, 0.55);
+    box-shadow: 0 -4px 16px rgba(60, 44, 28, 0.08);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+footer p {
+    max-width: 960px;
+    margin: 0 auto;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 0.98rem;
+    line-height: 1.75;
+    letter-spacing: 0.3px;
+    color: rgba(253, 247, 238, 0.92);
+}
+
+footer a {
+    color: var(--background-color);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(182, 123, 13, 0.65);
+    padding-bottom: 1px;
+    margin: 0 4px;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+footer a:hover {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+/* =========================================
+   DESKTOP (Menu orizzontale pulito)
+   ========================================= */
+@media (min-width: 1025px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .scrolling-text {
+        margin-left: 0;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 0;
+    }
+
+    .menu li {
+        padding: 0;
+    }
+}
+
+/* =========================================
+   MOBILE & TABLET
+   ========================================= */
+@media (max-width: 1024px) {
+    header {
+        padding: 0.6rem 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        border-top: none;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .menu {
+        padding: 0.85rem 0.25rem;
+        border-top: 1px solid rgba(253, 247, 238, 0.18);
+        margin-top: 0.5rem;
+        gap: 12px;
+    }
+
+    .menu li {
+        padding: 0;
+    }
+
+    .menu a {
+        font-size: 1.05rem;
+        padding: 4px 0;
+    }
+
+    .lang-switcher {
+        margin-left: 0;
+        padding-left: 0;
+        margin-top: 0.35rem;
+    }
+
+    .scrolling-text h2 {
+        font-size: 1.15rem;
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
+    }
+
+    footer p {
+        font-size: 0.92rem;
+    }
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* PWA Desktop Window Controls Overlay */
+@media (display-mode: window-controls-overlay) {
+    header {
+        padding-right: env(titlebar-area-x, 0);
+        -webkit-app-region: drag;
+    }
+
+    header button,
+    header a,
+    header nav {
+        -webkit-app-region: no-drag;
+    }
 }

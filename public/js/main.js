@@ -10,13 +10,13 @@ function includeHTML() {
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4) {
           if (this.status == 200) {
-              elmnt.innerHTML = this.responseText;
-              aggiornaAnno();
-              // Riallinea subito traduzioni e stato attivo IT/EN appena header/footer entrano nel DOM
-              if (window.JDLedI18n && window.JDLedI18n.getLang) {
-                  window.JDLedI18n.setLang(window.JDLedI18n.getLang());
-              }
-          }
+                elmnt.innerHTML = this.responseText;
+                aggiornaAnno();
+                evidenziaPaginaAttiva();
+                if (window.JDLedI18n && window.JDLedI18n.getLang) {
+                    window.JDLedI18n.setLang(window.JDLedI18n.getLang());
+                }
+            }
           if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
           elmnt.removeAttribute("include-html");
           includeHTML();
@@ -34,6 +34,18 @@ function aggiornaAnno() {
     if (spanAnno) {
         spanAnno.innerText = new Date().getFullYear();
     }
+}
+
+function evidenziaPaginaAttiva() {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('#navMenu .menu a').forEach(link => {
+        const linkPath = (link.getAttribute('href') || '').split('/').pop();
+        if (linkPath === currentPath) {
+            link.setAttribute('aria-current', 'page');
+        } else {
+            link.removeAttribute('aria-current');
+        }
+    });
 }
 
 // Esecuzione
