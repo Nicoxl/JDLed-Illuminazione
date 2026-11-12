@@ -217,3 +217,21 @@ footer a {
         -webkit-app-region: no-drag;
     }
 }
+ /* Stato attivo in bianco grassetto per il selettore lingua */
+.lang-switcher .lang-link[data-lang-active="true"],
+.lang-switcher .lang-link.active {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    border-bottom: 2px solid #ffffff !important;
+    opacity: 1 !important;
+}
+
+.lang-switcher .lang-link:not([data-lang-active="true"]):not(.active) {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-weight: 400 !important;
+    border-bottom: none !important;
+}
+
+.lang-switcher .lang-link:hover {
+    color: #ffffff !important;
+}

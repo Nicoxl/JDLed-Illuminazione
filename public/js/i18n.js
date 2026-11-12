@@ -1,5 +1,5 @@
 /* =========================================
-   JDLED PROJECT LUX - SISTEMA BILINGUE VELOCE (i18n.js)
+   JDLED PROJECT LUX - SISTEMA BILINGUE (i18n.js)
    ========================================= */
 
 (function () {
@@ -31,7 +31,24 @@
         return path.split('.').reduce((acc, part) => (acc && acc[part] !== undefined ? acc[part] : null), obj);
     }
 
+    function updateSwitcherUI() {
+        const btnIt = document.getElementById('change-to-it');
+        const btnEn = document.getElementById('change-to-en');
+        if (btnIt) {
+            const isIt = currentLang === 'it';
+            btnIt.classList.toggle('active', isIt);
+            btnIt.setAttribute('data-lang-active', isIt ? 'true' : 'false');
+        }
+        if (btnEn) {
+            const isEn = currentLang === 'en';
+            btnEn.classList.toggle('active', isEn);
+            btnEn.setAttribute('data-lang-active', isEn ? 'true' : 'false');
+        }
+    }
+
     function applyTranslations(root = document) {
+        updateSwitcherUI();
+
         if (!translations || Object.keys(translations).length === 0 || isApplying) return;
         isApplying = true;
 
@@ -71,13 +88,9 @@
                 const pageTitle = getNestedValue(translations, pageTitleKey);
                 if (pageTitle !== null) document.title = pageTitle;
             }
-
-            const btnIt = document.getElementById('change-to-it');
-            const btnEn = document.getElementById('change-to-en');
-            if (btnIt) btnIt.classList.toggle('active', currentLang === 'it');
-            if (btnEn) btnEn.classList.toggle('active', currentLang === 'en');
         } finally {
             isApplying = false;
+            updateSwitcherUI();
         }
     }
 
@@ -85,8 +98,8 @@
         if (!SUPPORTED_LANGS.includes(lang)) lang = DEFAULT_LANG;
         currentLang = lang;
         localStorage.setItem(STORAGE_KEY, lang);
+        updateSwitcherUI();
 
-        // Se è già in sessionStorage, applica subito senza fare fetch
         const cached = sessionStorage.getItem(`jdled_dict_${lang}`);
         if (cached) {
             translations = JSON.parse(cached);
@@ -123,20 +136,26 @@
         }
     });
 
-    // Osserva SOLO i contenitori include-html (header e footer) e poi si disconnette
+    // Riallinea traduzioni e selettore IT/EN appena header.html o footer.html vengono inseriti
     function watchIncludes() {
-        const includeTargets = document.querySelectorAll('[include-html]');
-        includeTargets.forEach(target => {
-            const obs = new MutationObserver(() => {
+        document.querySelectorAll('[include-html]').forEach(target => {
+            if (target.children.length > 0) {
                 applyTranslations(target);
-                obs.disconnect(); // Smette subito di osservare una volta caricato!
+                return;
+            }
+            const obs = new MutationObserver(() => {
+                if (target.children.length > 0) {
+                    applyTranslations(target);
+                    obs.disconnect();
+                }
             });
             obs.observe(target, { childList: true });
         });
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+        currentLang = detectInitialLang();
         watchIncludes();
-        setLanguage(detectInitialLang());
+        setLanguage(currentLang);
     });
 })();

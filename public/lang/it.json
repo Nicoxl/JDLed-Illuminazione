@@ -78,10 +78,10 @@
     "label_email": "Email:",
     "ph_email": "Inserisci il tuo indirizzo email...",
     "title_email": "Inserisci un indirizzo email valido (es. mario123@email.com)",
-    "label_tel": "Telefono Cellulare:",
+    "label_tel": "Cellulare:",
     "ph_tel": "Inserisci il tuo numero di cellulare...",
     "title_tel": "Inserisci un numero valido (es. +39 340 1234567)",
-    "label_msg": "Testo del Messaggio:",
+    "label_msg": "Messaggio:",
     "ph_msg": "Scrivi qui il messaggio...",
     "btn_submit": "Invia"
   },
