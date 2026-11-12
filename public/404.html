@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/404.css">
     <link rel="icon" href="/images/favicon.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"><!--Font Link-->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="/js/i18n.js" defer></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0NZSTZY12"></script>
     <script>
@@ -21,16 +22,16 @@
       gtag('config', 'G-V0NZSTZY12');
     </script>
 </head>
-<body>
+<body data-i18n-page-title="notfound.page_title">
     <main class="main-404">
         <div class="error-container">
             <h1 class="error-number">404</h1>
-            <h2 class="error-subtitle">Ops! Qualcosa è andato storto.</h2>
-            <p class="error-description">
-                Sembra che l'interruttore sia spento in questa pagina.<br>
-                La risorsa che cerchi potrebbe essere stata rimossa o non è mai esistita.
+            <h2 class="error-subtitle" data-i18n="notfound.subtitle">Ops! Qualcosa è andato storto.</h2>
+            <p class="error-description" data-i18n-html="notfound.desc">
+                Sembra che l'interruttore sia spento su questa pagina.<br>
+                La risorsa che stai cercando potrebbe essere stata rimossa o essere temporaneamente non disponibile.
             </p>
-            <a href="/" class="btn-back-home">Torna alla Luce (Home)</a>
+            <a href="/" class="btn-back-home" data-i18n="notfound.btn">Torna alla Luce (Home)</a>
         </div>
     </main>
 </body>

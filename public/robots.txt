@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.jdledprojectlux.web.app/sitemap.xml
+Sitemap: https://jdledprojectlux.com/sitemap.xml

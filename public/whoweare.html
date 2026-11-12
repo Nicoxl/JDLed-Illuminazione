@@ -2,22 +2,21 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8"> 
-    <link rel="alternate" hreflang="it" href="https://jdledprojectlux.com/it/whoweare.html" />
-    <link rel="alternate" hreflang="en" href="https://jdledprojectlux.com/en/whoweare.html" />
-    <link rel="alternate" hreflang="x-default" href="https://jdledprojectlux.com/en/whoweare.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="JDLed Illuminazione (Project Lux) - Tutti i consigli per illuminare la tua casa con le ultime tendenze e prodotti di alta qualità">
     <link rel="manifest" href="/manifest.webmanifest">
     <meta name="msapplication-TileColor" content="#8c6f4d">
     <link rel="apple-touch-icon" href="/images/icon-192.png">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/pages.css">
     <link rel="icon" href="/images/favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <title>Chi Siamo | JDLed Illuminazione</title>
     <script src="/js/menu.js" defer></script>
     <script src="/js/main.js" defer></script>
     <script src="/js/whoweare.js" defer></script>
-    <script src="/js/lang.js" defer></script>
+    <script src="/js/i18n.js" defer></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0NZSTZY12"></script>
     <script>
@@ -27,55 +26,63 @@
       gtag('config', 'G-V0NZSTZY12');
     </script>
 </head>
-<body class="whoweare">
-    <div include-html="header.html"></div>
+<body class="whoweare" data-i18n-page-title="whoweare.page_title">
+    <div include-html="/header.html"></div>
     <main>
         <section class="whoweare-section">
-            <h1 class="otherTitle">Chi Siamo</h1>
+            <h1 class="otherTitle" data-i18n="whoweare.title">Chi Siamo</h1>
             
             <div class="whoweare-content">
-                <p class="whoweare-lead">
+                <p class="whoweare-lead" data-i18n="whoweare.p1">
                     La nostra storia nasce dall’esperienza e dalla professionalità che da sempre contraddistinguono questo negozio di lampadari. 
                     Con la nuova gestione, vogliamo continuare a portare avanti l’eccellenza e la passione per l’illuminazione che, da anni, 
                     hanno reso Benetti Illuminazione un riferimento per la città ed il territorio della Valle dell'Agno.
                 </p>
-                <p>
+                <p data-i18n="whoweare.p2">
                     Oggi, con uno sguardo rinnovato verso le ultime tendenze di design e tecnologia, manteniamo intatti i valori di 
                     competenza, serietà e attenzione al cliente che ci hanno preceduti. Offriamo una selezione accurata di lampadari, 
                     applique, faretti e soluzioni luminose per ogni stile ed esigenza, insieme ad un servizio di consulenza per aiutarti
                     a scegliere l’illuminazione perfetta per la tua casa o la tua attività.
                 </p>
-                <p>
+                <p data-i18n="whoweare.p3">
                     Siamo qui per accoglierti, consigliarti ed illuminare ogni tuo progetto con qualità e professionalità. Ti aspettiamo!
                 </p>
             </div>
         </section>
 
         <section class="whoweare-shop-section">
-            <h2 class="otherSubtitle">Il negozio</h2>
+            <h2 class="otherSubtitle" data-i18n="whoweare.shop_title">Il negozio</h2>
             <div class="whoweare-shop-wrapper">
                 <img src="/images/insegna.jpg" alt="Insegna Negozio" id="shop">
             </div>
         </section>
 
         <section class="whoweare-brochure-section">
-            <h2 class="otherSubtitle">Tutto quello che devi sapere su di noi, in un colpo d'occhio</h2>
+            <h2 class="otherSubtitle" data-i18n="whoweare.glance_title">Tutto quello che devi sapere su di noi, in un colpo d'occhio</h2>
             <div class="whoweare-cards-grid">
                 <div class="whoweare-card">
                     <img src="/images/volantino.jpg" alt="Volantino JDLed Illuminazione">
-                    <button onclick="DownloadWithFilename('/images/volantino.pdf', 'volantino_JDLed.pdf')" class="whoweare-image-button">
+                    <button onclick="DownloadWithFilename('/images/volantino.pdf', 'volantino_JDLed.pdf')" 
+                            data-file-url="/images/volantino.pdf" 
+                            data-i18n-download="whoweare.flyer_filename" 
+                            data-i18n="whoweare.btn_flyer" 
+                            class="whoweare-image-button">
                         Download Volantino (PDF)
                     </button>
                 </div>
                 <div class="whoweare-card">
                     <img src="/images/fronteBiglietto.jpg" alt="Biglietto da Visita JDLed Illuminazione">
-                    <button onclick="DownloadWithFilename('/images/bigliettoVisita.pdf', 'bigliettoVisita.pdf')" class="whoweare-image-button">
+                    <button onclick="DownloadWithFilename('/images/bigliettoVisita.pdf', 'bigliettoVisita.pdf')" 
+                            data-file-url="/images/bigliettoVisita.pdf" 
+                            data-i18n-download="whoweare.card_filename" 
+                            data-i18n="whoweare.btn_card" 
+                            class="whoweare-image-button">
                         Download Biglietto da Visita (PDF)
                     </button>
                 </div>
             </div>
         </section>
     </main>
-    <div include-html="footer.html"></div>
+    <div include-html="/footer.html"></div>
 </body>
 </html>

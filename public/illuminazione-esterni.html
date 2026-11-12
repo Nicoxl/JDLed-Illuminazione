@@ -2,9 +2,6 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <link rel="alternate" hreflang="it" href="https://jdledprojectlux.com/it/illuminazione-esterni.html" />
-    <link rel="alternate" hreflang="en" href="https://jdledprojectlux.com/en/illuminazione-esterni.html" />
-    <link rel="alternate" hreflang="x-default" href="https://jdledprojectlux.com/en/illuminazione-esterni.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="JDLed Illuminazione (Project Lux) - Tutti i consigli per illuminare la tua casa con le ultime tendenze e prodotti di alta qualità">
     <link rel="manifest" href="/manifest.webmanifest">
@@ -17,7 +14,7 @@
     <script src="/js/menu.js" defer></script>
     <script src="/js/lightbox.js" defer></script>
     <script src="/js/main.js" defer></script>
-    <script src="/js/lang.js" defer></script>
+    <script src="/js/i18n.js" defer></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0NZSTZY12"></script>
     <script>
@@ -27,17 +24,17 @@
       gtag('config', 'G-V0NZSTZY12');
     </script>
 </head>
-<body>
-    <div include-html="header.html"></div>
+<body data-i18n-page-title="esterni.page_title">
+    <div include-html="/header.html"></div>
     <main>
         <section class="catalog-header">
-            <h1 class="otherTitle">Illuminazione per Esterni</h1>
-            <p class="catalog-kicker">Eleganza, resistenza e sicurezza per gli spazi outdoor</p>
+            <h1 class="otherTitle" data-i18n="esterni.title">Illuminazione per Esterni</h1>
+            <p class="catalog-kicker" data-i18n="esterni.kicker">Eleganza, resistenza e sicurezza per gli spazi outdoor</p>
         </section>
 
         <!-- Applique -->
         <section class="gallery">
-            <h2 class="gallery-subtitle">Applique</h2>
+            <h2 class="gallery-subtitle" data-i18n="esterni.cat_applique">Applique</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="/images/REDO/esterni/esterni-redo1.jpg" alt="Applique Esterni Redo 1" class="lightbox-trigger" data-full="/images/REDO/esterni/esterni-redo1.jpg" loading="lazy" decoding="async">
@@ -71,7 +68,7 @@
 
         <!-- Lampioni -->
         <section class="gallery">
-            <h2 class="gallery-subtitle">Lampioni</h2>
+            <h2 class="gallery-subtitle" data-i18n="esterni.cat_lampioni">Lampioni</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="/images/Moretti Luce/esterni/esterni-moretti1.jpg" alt="Lampione Moretti Luce 1" class="lightbox-trigger" data-full="/images/Moretti Luce/esterni/esterni-moretti1.jpg" loading="lazy" decoding="async">
@@ -104,11 +101,11 @@
         </section>
 
         <section class="catalog-cta-box">
-            <p>Queste sono solo alcune delle nostre proposte. Vieni a trovarci in showroom o contattaci per sfogliare i cataloghi completi e ricevere una consulenza su misura.</p>
-            <a href="contacts.html" class="catalog-cta-btn">Richiedi una consulenza</a>
+            <p data-i18n="esterni.cta_text">Queste sono solo alcune delle nostre proposte. Vieni a trovarci in showroom o contattaci per sfogliare i cataloghi completi e ricevere una consulenza su misura.</p>
+            <a href="/contacts.html" class="catalog-cta-btn" data-i18n="esterni.cta_btn">Richiedi una consulenza</a>
         </section>
     </main>
-    <div include-html="footer.html"></div>
+    <div include-html="/footer.html"></div>
 
     <!-- Lightbox container -->
     <div id="lightbox" class="lightbox">

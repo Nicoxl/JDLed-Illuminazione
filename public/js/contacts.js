@@ -13,10 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
         form.appendChild(msg);
     }
 
-    // Rileva la lingua (dall'attributo lang di <html>, dall'URL o dalle impostazioni del browser)
-    const htmlLang = (document.documentElement.lang || '').toLowerCase();
-    const isEn = htmlLang.startsWith('en') || window.location.pathname.includes('/en/');
-
     const i18n = {
         it: {
             required: "Compila questo campo.",
@@ -38,14 +34,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    const t = isEn ? i18n.en : i18n.it;
+    // Recupera sempre i testi nella lingua attualmente attiva
+    function getTexts() {
+        const lang = (window.JDLedI18n && window.JDLedI18n.getLang())
+            || localStorage.getItem('jdled_lang')
+            || (document.documentElement.lang || 'it').slice(0, 2).toLowerCase();
+        return lang === 'en' ? i18n.en : i18n.it;
+    }
 
-    // Configurazione dei messaggi di validazione nativa dei browser
     const inputsConfig = [
-        { id: 'name', patternMsg: t.namePattern },
-        { id: 'email', patternMsg: t.emailPattern },
-        { id: 'tel', patternMsg: t.telPattern },
-        { id: 'msg', patternMsg: null }
+        { id: 'name', patternKey: 'namePattern' },
+        { id: 'email', patternKey: 'emailPattern' },
+        { id: 'tel', patternKey: 'telPattern' },
+        { id: 'msg', patternKey: null }
     ];
 
     inputsConfig.forEach(item => {
@@ -53,10 +54,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!el) return;
 
         el.addEventListener('invalid', function () {
+            const t = getTexts();
             if (el.validity.valueMissing) {
                 el.setCustomValidity(t.required);
-            } else if (el.validity.patternMismatch && item.patternMsg) {
-                el.setCustomValidity(item.patternMsg);
+            } else if (el.validity.patternMismatch && item.patternKey) {
+                el.setCustomValidity(t[item.patternKey]);
             } else {
                 el.setCustomValidity('');
             }
@@ -73,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Se un campo blocca l'invio via HTML5, mostra comunque il testo rosso in basso
     if (form) {
         form.addEventListener('invalid', function () {
+            const t = getTexts();
             if (msg) {
                 msg.textContent = t.emptyForm;
                 msg.style.color = "#dc3545";
@@ -83,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Mostra il messaggio di successo se presente il flag in localStorage dopo il redirect
     if (localStorage.getItem("formInviato") === "true" && msg) {
+        const t = getTexts();
         msg.textContent = t.success;
         msg.style.color = "#28a745";
         msg.style.display = "block";
@@ -92,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Gestione invio e validazione form
     if (form) {
         form.addEventListener('submit', function (e) {
+            const t = getTexts();
             const nome = document.getElementById('name') ? document.getElementById('name').value.trim() : '';
             const email = document.getElementById('email') ? document.getElementById('email').value.trim() : '';
             const telefono = document.getElementById('tel') ? document.getElementById('tel').value.trim() : '';

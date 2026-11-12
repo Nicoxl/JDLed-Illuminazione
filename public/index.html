@@ -1,22 +1,112 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <title>JDLed Project Lux</title>
-    
+  <head>
+    <link rel="canonical" href="https://jdledprojectlux.com/" />
     <script>
-        // Legge la lingua del browser
-        var userLang = navigator.language || navigator.userLanguage; 
-        
-        // Se inizia con "it", spara l'utente nella cartella /it/
-        if (userLang.startsWith('it')) {
-            window.location.replace("/it/");
-        } 
-        // Altrimenti, per tutto il resto del mondo, spara su /en/
-        else {
-            window.location.replace("/en/");
+      var host = window.location.hostname;
+      if (host.includes("web.app") || host.includes("firebaseapp.com")) {
+        window.location.replace("https://www.jdledprojectlux.com" + window.location.pathname);
+      }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JDLed Illuminazione</title>
+    <meta name="google-site-verification" content="7h1F6NSx2JzUXexdbYautrOvIHC158QyWufGms42Z9w" />
+    <meta name="description" content="JDLed Illuminazione (Project Lux) - Tutti i consigli per illuminare la tua casa con le ultime tendenze e prodotti di alta qualità">
+    <meta property="og:site_name" content="JDLed Illuminazione (Project Lux)" />
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="msapplication-TileColor" content="#8c6f4d">
+    <link rel="apple-touch-icon" href="/images/icon-192.png">
+    <!-- Style Link -->
+    <link rel="preload" href="/css/style.css" as="style">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Favicon Link -->
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+    <!-- Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    </noscript>
+    <!-- Scripts -->
+    <script src="/js/menu.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/i18n.js" defer></script>
+    <script defer src="/__/firebase/11.7.1/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V0NZSTZY12');
+      function loadGTM() {
+          var script = document.createElement('script');
+          script.src = "https://www.googletagmanager.com/gtag/js?id=G-V0NZSTZY12";
+          script.async = true;
+          document.head.appendChild(script);
+      }
+      const interactionEvents = ['scroll', 'mousemove', 'touchstart', 'keydown'];
+      let isLoaded = false;
+      interactionEvents.forEach(event => {
+          window.addEventListener(event, () => {
+              if (!isLoaded) {
+                  loadGTM();
+                  isLoaded = true;
+              }
+          }, { once: true, passive: true });
+      });
+    </script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "JDLed Project Lux",
+          "alternateName": ["JDLed", "JDLed Project Lux"],
+          "url": "https://jdledprojectlux.com/"
         }
     </script>
-</head>
-<body> </body>
+  </head>
+  <body class="home" data-i18n-page-title="home.page_title">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div include-html="/header.html"></div>
+    <main id="mainMain">
+      <section class="hero-section">
+        <div class="hero-logo">
+          <img src="/images/logo.jpg" alt="JDLed Illuminazione Logo">
+        </div>
+        <div class="hero-container">
+          <div class="title-box">
+            <h1 class="bigTitle">JDLed Illuminazione</h1>
+            <p class="smallTitle">Project Lux</p>
+          </div>
+          <div class="subtitle-box">
+            <h2 id="subtitle" data-i18n="home.subtitle">Tutti i consigli per illuminare la tua casa con le ultime tendenze per donare stile ed eleganza all'ambiente offrendo prodotti di alta qualità per diverse esigenze</h2>
+          </div>
+          <div class="hero-cta-group">
+            <div class="hero-cta-row">
+              <a href="/illuminazione-interni.html" class="hero-btn hero-btn-secondary" data-i18n="home.btn_interni">Illuminazione Interni</a>
+              <a href="/illuminazione-esterni.html" class="hero-btn hero-btn-secondary" data-i18n="home.btn_esterni">Illuminazione Esterni</a>
+            </div>
+            <a href="/contacts.html" class="hero-btn hero-btn-primary" data-i18n="home.btn_contacts">Contattaci per una consulenza</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div include-html="footer.html"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('Service Worker registrato!', reg))
+            .catch(err => console.log('Errore Service Worker:', err));
+        });
+      }
+    </script>
+  </body>
 </html>

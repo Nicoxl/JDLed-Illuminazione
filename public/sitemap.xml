@@ -3,90 +3,50 @@
 
   <url>
     <loc>https://jdledprojectlux.com/</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://jdledprojectlux.com/it/</loc>
-    <lastmod>2026-04-04</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://jdledprojectlux.com/it/illuminazione-interni.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <loc>https://jdledprojectlux.com/illuminazione-interni.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://jdledprojectlux.com/it/illuminazione-esterni.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <loc>https://jdledprojectlux.com/illuminazione-esterni.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://jdledprojectlux.com/it/whoweare.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <loc>https://jdledprojectlux.com/whoweare.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jdledprojectlux.com/it/contacts.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <loc>https://jdledprojectlux.com/contacts.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jdledprojectlux.com/it/privacy-policy.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <loc>https://jdledprojectlux.com/privacy-policy.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://jdledprojectlux.com/it/cookie-policy.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <loc>https://jdledprojectlux.com/cookie-policy.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://jdledprojectlux.com/it/terms-notes.html</loc>
-    <lastmod>2026-04-04</lastmod>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://jdledprojectlux.com/en/</loc>
-    <lastmod>2026-04-04</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://jdledprojectlux.com/en/illuminazione-interni.html</loc>
-    <lastmod>2026-04-04</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://jdledprojectlux.com/en/illuminazione-esterni.html</loc>
-    <lastmod>2026-04-04</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://jdledprojectlux.com/en/whoweare.html</loc>
-    <lastmod>2026-04-04</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jdledprojectlux.com/en/contacts.html</loc>
-    <lastmod>2026-04-04</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jdledprojectlux.com/en/privacy-policy.html</loc>
-    <lastmod>2026-04-04</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://jdledprojectlux.com/en/cookie-policy.html</loc>
-    <lastmod>2026-04-04</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://jdledprojectlux.com/en/terms-notes.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <loc>https://jdledprojectlux.com/terms-notes.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 

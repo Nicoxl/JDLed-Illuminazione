@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex"> 
-    <title>Offline - Connection Lost | JDLed Illuminazione</title>
-    <meta name="description" content="Internet Connection Lost - JDLed Illuminazione (Project Lux)">
+    <title>Offline - Connessione Persa | JDLed Illuminazione</title>
+    <meta name="description" content="Connessione Internet Persa - JDLed Illuminazione (Project Lux)">
     <link rel="manifest" href="/manifest.webmanifest">
     <meta name="msapplication-TileColor" content="#8c6f4d">
     <link rel="apple-touch-icon" href="/images/icon-192.png">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/offline.css">
-    
     <link rel="icon" href="/images/favicon.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="/js/i18n.js" defer></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0NZSTZY12"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -23,16 +22,16 @@
       gtag('config', 'G-V0NZSTZY12');
     </script>
 </head>
-<body>
+<body data-i18n-page-title="offline.page_title">
     <main class="main-offline">
         <div class="offline-container">
             <h1 class="offline-title">OFFLINE</h1>
-            <h2 class="offline-subtitle">Connection Lost</h2>
-            <p class="offline-description">
-                It seems the network light has gone out.<br>
-                Check your wi-fi or data connection and try turning it on again.
+            <h2 class="offline-subtitle" data-i18n="offline.subtitle">Connessione Persa</h2>
+            <p class="offline-description" data-i18n-html="offline.desc">
+                Sembra che si sia spenta la luce della rete.<br>
+                Controlla la tua connessione Wi-Fi o dati e prova a riaccenderla.
             </p>
-            <button onclick="window.location.reload()" class="btn-retry">Retry Connection</button>
+            <button onclick="window.location.reload()" class="btn-retry" data-i18n="offline.btn">Riprova Connessione</button>
         </div>
     </main>
 </body>

@@ -7,6 +7,38 @@
       "**/node_modules/**"
     ],
     "errorPage": "/404.html",
+    "redirects": [
+      {
+        "source": "/it",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/it/",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/en",
+        "destination": "/?lang=en",
+        "type": 301
+      },
+      {
+        "source": "/en/",
+        "destination": "/?lang=en",
+        "type": 301
+      },
+      {
+        "source": "/it/:page",
+        "destination": "/:page",
+        "type": 301
+      },
+      {
+        "source": "/en/:page",
+        "destination": "/:page?lang=en",
+        "type": 301
+      }
+    ],
     "headers": [
       {
         "source": "**/*.@(jpg|jpeg|gif|png|webp|svg|ico)",

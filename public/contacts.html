@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JDLed Illuminazione (Project Lux) - Tutti i consigli per illuminare la tua casa con le ultime tendenze e prodotti di alta qualità">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="msapplication-TileColor" content="#8c6f4d">
+    <link rel="apple-touch-icon" href="/images/icon-192.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Contatti | JDLed Illuminazione</title>
+    <script src="/js/menu.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/i18n.js" defer></script>
+    <script src="/js/contacts.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0NZSTZY12"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V0NZSTZY12');
+    </script>
+</head>
+<body class="contacts" data-i18n-page-title="contacts.page_title">
+    <div include-html="/header.html"></div>
+    <main>
+        <h1 class="otherTitle" data-i18n="contacts.title">Contatti</h1>
+        <p class="contacts-desc" data-i18n="contacts.desc">Hai bisogno di informazioni? Scrivici o vieni a trovarci.</p>
+        <div class="contacts-grid">
+            <div class="contacts-info">
+                <h3 class="title-recapiti" data-i18n="contacts.direct_title">Recapiti Diretti</h3>
+                <p><strong data-i18n="contacts.phone_label">Telefono Cellulare:</strong> <a href="tel:+393468386491">+39 346 8386491</a></p>
+                <p><strong data-i18n="contacts.email_label">Email:</strong> <a href="mailto:jessica.jdled@gmail.com">jessica.jdled@gmail.com</a></p>
+                <p><strong data-i18n="contacts.op_office_label">Sede Operativa:</strong> <br>Via Monte Cimone n.15/b, 36073 Cornedo Vicentino (VI) <i data-i18n="contacts.op_office_note">(Ex Benetti Illuminazione)</i></p>
+                <p><strong data-i18n="contacts.reg_office_label">Sede Legale:</strong> <br>Località Campagna n.50, 36078 Valdagno (VI)</p>
+
+                <hr style="border: 0; border-top: 1px solid rgba(140, 111, 77, 0.2); margin: 20px 0;">
+
+                <h3 class="title-societari" data-i18n="contacts.company_title">Dati Societari</h3>
+                <p><strong data-i18n="contacts.vat_label">Partita IVA:</strong> 04585400247</p>
+                <p><strong data-i18n="contacts.pec_label">PEC:</strong> <a href="mailto:jdled@pec.it">jdled@pec.it</a></p>
+                <p><strong data-i18n="contacts.sdi_label">Codice SDI:</strong> 6JXPS2J</p>
+                <p><strong data-i18n="contacts.rea_office_label">Ufficio Registro Imprese:</strong> <span data-i18n="contacts.rea_office_val">CCIAA di Vicenza</span></p>
+                <p><strong data-i18n="contacts.rea_num_label">Numero REA:</strong> VI-415001</p>
+            </div>
+
+            <div class="contacts-form-wrapper">
+                <h3 class="title-recapiti" data-i18n="contacts.form_title">Inviaci un Messaggio e ti risponderemo!</h3>
+                <form action="https://formsubmit.co/benettinic00@gmail.com" method="POST" class="contacts-form" id="contacts-form">
+                    <label for="name" data-i18n="contacts.label_name">Nome:</label>
+                    <input type="text" id="name" name="name" pattern="[A-Za-zÀ-ÿ\s]{2,}" 
+                        data-i18n-title="contacts.title_name" title="Inserisci almeno 2 lettere. Numeri e simboli non sono ammessi." 
+                        autocomplete="name" data-i18n-placeholder="contacts.ph_name" placeholder="Inserisci il tuo nome..." required>
+                    
+                    <label for="email" data-i18n="contacts.label_email">Email:</label>
+                    <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" 
+                        data-i18n-title="contacts.title_email" title="Inserisci un indirizzo email valido (es. mario123@email.com)" 
+                        data-i18n-placeholder="contacts.ph_email" placeholder="Inserisci il tuo indirizzo email..." autocomplete="email" required>
+                    
+                    <label for="tel" data-i18n="contacts.label_tel">Telefono Cellulare:</label>
+                    <input type="text" id="tel" name="tel" inputmode="tel" pattern="[0-9\s\-\+\(\)]{10,}" 
+                        data-i18n-title="contacts.title_tel" title="Inserisci un numero valido (es. +39 340 1234567)" 
+                        data-i18n-placeholder="contacts.ph_tel" placeholder="Inserisci il tuo numero di cellulare..." autocomplete="tel" required>
+                    
+                    <label for="msg" data-i18n="contacts.label_msg">Testo del Messaggio:</label>
+                    <textarea id="msg" name="msg" rows="5" data-i18n-placeholder="contacts.ph_msg" placeholder="Scrivi qui il messaggio..." required></textarea>
+                    
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://jdledprojectlux.com/contacts.html">
+                    <input type="hidden" name="_subject" value="Nuovo messaggio da JDLED Project Lux!">
+                    <input type="text" name="_honey" style="display:none">
+                    
+                    <button type="submit" data-i18n="contacts.btn_submit">Invia</button>
+                    <p id="form-msg"></p>
+                </form>
+            </div>
+        </div>
+    </main>
+    <div include-html="/footer.html"></div>
+</body>
+</html>
