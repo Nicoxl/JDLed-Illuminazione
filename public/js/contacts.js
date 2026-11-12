@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contacts-form');
     let msg = document.getElementById('form-msg');
 
-    // Se l'elemento per il messaggio non esiste già nel DOM, lo crea sotto il form
     if (!msg && form) {
         msg = document.createElement('p');
         msg.id = 'form-msg';
@@ -21,7 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
             telPattern: "Inserisci un numero di telefono valido (es. +39 340 1234567).",
             emptyForm: "Compila tutti i campi prima di inviare.",
             sending: "Invio in corso...",
-            success: "Messaggio inviato con successo!"
+            success: "Messaggio inviato con successo! Ti risponderemo al più presto.",
+            error: "Errore durante l'invio. Riprova o scrivici direttamente a jessica.jdled@gmail.com."
         },
         en: {
             required: "Please fill out this field.",
@@ -30,11 +30,11 @@ document.addEventListener('DOMContentLoaded', function () {
             telPattern: "Please enter a valid phone number (e.g. +39 340 1234567).",
             emptyForm: "Please fill in all fields before sending.",
             sending: "Sending...",
-            success: "Message sent successfully!"
+            success: "Message sent successfully! We will get back to you shortly.",
+            error: "Error sending message. Please try again or email jessica.jdled@gmail.com directly."
         }
     };
 
-    // Recupera sempre i testi nella lingua attualmente attiva
     function getTexts() {
         const lang = (window.JDLedI18n && window.JDLedI18n.getLang())
             || localStorage.getItem('jdled_lang')
@@ -72,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Se un campo blocca l'invio via HTML5, mostra comunque il testo rosso in basso
     if (form) {
         form.addEventListener('invalid', function () {
             const t = getTexts();
@@ -82,40 +81,69 @@ document.addEventListener('DOMContentLoaded', function () {
                 msg.style.display = "block";
             }
         }, true);
-    }
 
-    // Mostra il messaggio di successo se presente il flag in localStorage dopo il redirect
-    if (localStorage.getItem("formInviato") === "true" && msg) {
-        const t = getTexts();
-        msg.textContent = t.success;
-        msg.style.color = "#28a745";
-        msg.style.display = "block";
-        localStorage.removeItem("formInviato");
-    }
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault(); // Blocca il redirect esterno che lasciava la pagina in caricamento
 
-    // Gestione invio e validazione form
-    if (form) {
-        form.addEventListener('submit', function (e) {
             const t = getTexts();
-            const nome = document.getElementById('name') ? document.getElementById('name').value.trim() : '';
-            const email = document.getElementById('email') ? document.getElementById('email').value.trim() : '';
-            const telefono = document.getElementById('tel') ? document.getElementById('tel').value.trim() : '';
-            const messaggio = document.getElementById('msg') ? document.getElementById('msg').value.trim() : '';
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const nome = document.getElementById('name')?.value.trim() || '';
+            const email = document.getElementById('email')?.value.trim() || '';
+            const telefono = document.getElementById('tel')?.value.trim() || '';
+            const messaggio = document.getElementById('msg')?.value.trim() || '';
 
             if (!nome || !email || !telefono || !messaggio) {
-                e.preventDefault();
                 if (msg) {
                     msg.textContent = t.emptyForm;
                     msg.style.color = "#dc3545";
                     msg.style.display = "block";
                 }
-            } else {
-                localStorage.setItem("formInviato", "true");
+                return;
+            }
+
+            // Blocca il tasto durante l'invio per evitare doppi clic
+            if (submitBtn) submitBtn.disabled = true;
+            if (msg) {
+                msg.textContent = t.sending;
+                msg.style.color = "#b67b0d";
+                msg.style.display = "block";
+            }
+
+            try {
+                // Converte automaticamente l'action di FormSubmit nell'endpoint AJAX
+                const ajaxUrl = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+                const formData = new FormData(form);
+
+                const response = await fetch(ajaxUrl, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                const result = await response.json();
+
+                if (response.ok && (result.success === "true" || result.success === true)) {
+                    if (msg) {
+                        msg.textContent = t.success;
+                        msg.style.color = "#28a745";
+                        msg.style.display = "block";
+                    }
+                    form.reset();
+                } else {
+                    throw new Error(result.message || 'Errore FormSubmit');
+                }
+            } catch (err) {
+                console.error('Errore invio form:', err);
                 if (msg) {
-                    msg.textContent = t.sending;
-                    msg.style.color = "#b67b0d";
+                    msg.textContent = t.error;
+                    msg.style.color = "#dc3545";
                     msg.style.display = "block";
                 }
+            } finally {
+                // Riabilita sempre il pulsante, sia in caso di successo che di errore
+                if (submitBtn) submitBtn.disabled = false;
             }
         });
     }
