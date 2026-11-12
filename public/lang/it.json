@@ -109,7 +109,7 @@
     "li_3_1": "Accettare tutti i cookie",
     "li_3_2": "Rifiutare quelli non necessari",
     "li_3_3": "Personalizzare le tue preferenze",
-    "p_3_2": "Puoi <b>modificare o revocare il consenso</b> in qualsiasi momento cliccando sul pulsante <button type=\"button\" onclick=\"openCookiePreferences()\" style=\"background:none;border:none;color:#b67b0d;font-weight:bold;text-decoration:underline;cursor:pointer;font-family:inherit;font-size:inherit;\">Gestisci preferenze cookie</button>.",
+    "p_3_2": "Puoi <b>modificare o revocare il consenso</b> in qualsiasi momento cliccando sul pulsante <button type=\"button\" onclick=\"openCookiePreferences()\" style=\"background:none;border:none;color:#b67b0d;font-weight:bold;text-decoration:underline;cursor:pointer;font-family:inherit;font-size:inherit;\">Gestisci Cookie</button>.",
     "h2_4": "4. Come disabilitare i cookie dal browser",
     "p_4": "Puoi anche gestire i cookie direttamente dalle impostazioni del tuo browser. Ecco i link utili:",
     "h2_5": "5. Titolare del trattamento",
