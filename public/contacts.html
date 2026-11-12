@@ -24,7 +24,6 @@
     <script src="/js/main.js" defer></script>
     <script src="/js/i18n.js" defer></script>
     <script src="/js/contacts.js" defer></script>
-    <script src="/js/cookie-consent.js" defer></script>
 </head>
 <body class="contacts" data-i18n-page-title="contacts.page_title" data-i18n-meta-desc="contacts.meta_desc">
     <div include-html="/header.html"></div>
@@ -84,70 +83,3 @@
     <div include-html="/footer.html"></div>
 </body>
 </html>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contacts-form');
-    const msg = document.getElementById('form-msg');
-
-    if (!form) {
-        alert("Errore: form con id 'contacts-form' non trovato!");
-        return;
-    }
-
-    form.addEventListener('submit', async function (e) {
-        e.preventDefault();
-
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const nome = document.getElementById('name')?.value.trim() || '';
-        const email = document.getElementById('email')?.value.trim() || '';
-        const telefono = document.getElementById('tel')?.value.trim() || '';
-        const messaggio = document.getElementById('msg')?.value.trim() || '';
-
-        if (!nome || !email || !telefono || !messaggio) {
-            msg.textContent = "Compila tutti i campi prima di inviare.";
-            msg.style.color = "#dc3545";
-            msg.style.display = "block";
-            return;
-        }
-
-        if (submitBtn) submitBtn.disabled = true;
-        msg.textContent = "Invio in corso...";
-        msg.style.color = "#b67b0d";
-        msg.style.display = "block";
-
-        try {
-            const response = await fetch("https://formsubmit.co/ajax/benettinic00@gmail.com", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
-                },
-                body: JSON.stringify({
-                    name: nome,
-                    email: email,
-                    tel: telefono,
-                    msg: messaggio,
-                    _subject: "Nuovo messaggio da JDLED Project Lux!",
-                    _captcha: "false"
-                })
-            });
-
-            const data = await response.json();
-
-            if (response.ok && (data.success === "true" || data.success === true)) {
-                msg.textContent = "Messaggio inviato con successo! Ti risponderemo al più presto.";
-                msg.style.color = "#28a745";
-                form.reset();
-            } else {
-                msg.textContent = "Risposta FormSubmit: " + (data.message || "Errore sconosciuto");
-                msg.style.color = "#dc3545";
-            }
-        } catch (err) {
-            msg.textContent = "Errore di rete/blocco: " + err.message;
-            msg.style.color = "#dc3545";
-        } finally {
-            if (submitBtn) submitBtn.disabled = false;
-        }
-    });
-});
-</script>

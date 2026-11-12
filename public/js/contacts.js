@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contacts-form');
     let msg = document.getElementById('form-msg');
 
+    // Se l'elemento per il messaggio non esiste già nel DOM, lo crea sotto il form
     if (!msg && form) {
         msg = document.createElement('p');
         msg.id = 'form-msg';
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
+    // Recupera sempre i testi nella lingua attualmente attiva
     function getTexts() {
         const lang = (window.JDLedI18n && window.JDLedI18n.getLang())
             || localStorage.getItem('jdled_lang')
@@ -72,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Se un campo blocca l'invio via HTML5, mostra comunque il testo rosso in basso
     if (form) {
         form.addEventListener('invalid', function () {
             const t = getTexts();
@@ -82,8 +85,9 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }, true);
 
+        // Gestione invio AJAX senza timeout di 10s
         form.addEventListener('submit', async function (e) {
-            e.preventDefault(); // Blocca il redirect esterno che lasciava la pagina in caricamento
+            e.preventDefault();
 
             const t = getTexts();
             const submitBtn = form.querySelector('button[type="submit"]');
@@ -101,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            // Blocca il tasto durante l'invio per evitare doppi clic
             if (submitBtn) submitBtn.disabled = true;
             if (msg) {
                 msg.textContent = t.sending;
@@ -111,28 +114,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
             try {
                 const ajaxUrl = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
-                const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 10000);
+                const formData = new FormData(form);
 
                 const response = await fetch(ajaxUrl, {
                     method: 'POST',
-                    signal: controller.signal,
+                    body: formData,
                     headers: {
-                        'Content-Type': 'application/json',
                         'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        name: nome,
-                        email: email,
-                        tel: telefono,
-                        msg: messaggio,
-                        _subject: "Nuovo messaggio da JDLED Project Lux!",
-                        _captcha: "false",
-                        _honey: document.querySelector('input[name="_honey"]')?.value || ""
-                    })
+                    }
                 });
 
-                clearTimeout(timeoutId);
                 const result = await response.json();
 
                 if (response.ok && (result.success === "true" || result.success === true)) {
@@ -148,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } catch (err) {
                 console.error('Dettaglio errore form:', err);
                 if (msg) {
-                    msg.textContent = t.error;
+                    msg.textContent = t.error + " (" + err.message + ")";
                     msg.style.color = "#dc3545";
                     msg.style.display = "block";
                 }
