@@ -35,36 +35,34 @@
     <script src="/js/i18n.js" defer></script>
     <script defer src="/__/firebase/11.7.1/firebase-app-compat.js"></script>
     <script defer src="/__/firebase/init.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-V0NZSTZY12');
-      function loadGTM() {
-          var script = document.createElement('script');
-          script.src = "https://www.googletagmanager.com/gtag/js?id=G-V0NZSTZY12";
-          script.async = true;
-          document.head.appendChild(script);
-      }
-      const interactionEvents = ['scroll', 'mousemove', 'touchstart', 'keydown'];
-      let isLoaded = false;
-      interactionEvents.forEach(event => {
-          window.addEventListener(event, () => {
-              if (!isLoaded) {
-                  loadGTM();
-                  isLoaded = true;
-              }
-          }, { once: true, passive: true });
-      });
-    </script>
+    <script src="/js/cookie-consent.js" defer></script>
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "JDLed Project Lux",
-          "alternateName": ["JDLed", "JDLed Project Lux"],
-          "url": "https://jdledprojectlux.com/"
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "name": "JDLed Illuminazione",
+              "alternateName": ["JDLed", "JDLed Project Lux"],
+              "url": "https://jdledprojectlux.com/"
+            },
+            {
+              "@type": "Store",
+              "name": "JDLed Illuminazione (Project Lux)",
+              "image": "https://jdledprojectlux.com/images/logo.jpg",
+              "telephone": "+39 346 8386491",
+              "email": "jessica.jdled@gmail.com",
+              "url": "https://jdledprojectlux.com/",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Via Monte Cimone 15/b",
+                "addressLocality": "Cornedo Vicentino",
+                "addressRegion": "VI",
+                "postalCode": "36073",
+                "addressCountry": "IT"
+              }
+            }
+          ]
         }
     </script>
   </head>

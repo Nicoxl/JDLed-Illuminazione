@@ -1,4 +1,4 @@
-const CACHE_NAME = 'offline-cache-v4';
+const CACHE_NAME = 'offline-cache-v5';
 
 const FILES_TO_CACHE = [
     '/',
@@ -17,6 +17,7 @@ const FILES_TO_CACHE = [
     '/js/main.js',
     '/js/menu.js',
     '/js/i18n.js',
+    '/js/cookie-consent.js',
     '/lang/it.json',
     '/lang/en.json'
 ];

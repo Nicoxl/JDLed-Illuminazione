@@ -13,7 +13,8 @@
     "privacy": "Privacy Policy",
     "cookie": "Cookie Policy",
     "terms": "Legal Notes/Terms of Service",
-    "credits": "- Website developed by Nicola Benetti -"
+    "credits": "- Website developed by Nicola Benetti -",
+    "manage_cookies": "Manage Cookies"
   },
   "home": {
     "page_title": "JDLed Illuminazione",
@@ -108,7 +109,7 @@
     "li_3_1": "Accept all cookies",
     "li_3_2": "Reject non-essential cookies",
     "li_3_3": "Personalize your preferences",
-    "p_3_2": "You can <b>modify or revoke your consent</b> at any time by clicking the \"[Manage cookie preferences]\" button",
+    "p_3_2": "You can <b>modify or revoke your consent</b> at any time by clicking the <button type=\"button\" onclick=\"openCookiePreferences()\" style=\"background:none;border:none;color:#b67b0d;font-weight:bold;text-decoration:underline;cursor:pointer;font-family:inherit;font-size:inherit;\">Manage cookie preferences</button> button.",
     "h2_4": "4. How to disable cookies from your browser",
     "p_4": "You can also manage cookies directly from your browser's settings. Here are useful links:",
     "h2_5": "5. Data Controller",
