@@ -12,11 +12,12 @@
     <link rel="apple-touch-icon" href="/images/icon-192.png">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" href="/images/favicon.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"> <!--Font Link-->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <title>Chi Siamo | JDLed Illuminazione</title>
-    <script src="/js/menu.js" defer></script>  <!--menù header-->
-    <script src="/js/main.js" defer></script>  <!--funzioni js per funzionamento sito-->
-    <script src="/js/whoweare.js" defer></script> <!--funzione download con nome-->
+    <script src="/js/menu.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/whoweare.js" defer></script>
+    <script src="/js/lang.js" defer></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0NZSTZY12"></script>
     <script>
@@ -26,41 +27,55 @@
       gtag('config', 'G-V0NZSTZY12');
     </script>
 </head>
-<body>
+<body class="whoweare">
     <div include-html="header.html"></div>
     <main>
-        <h1 class="otherTitle">Chi Siamo</h1>
-        <p style="font-size: 1.25rem; margin-top: 2rem;">
-        La nostra storia nasce dall’esperienza e dalla professionalità che da sempre contraddistinguono questo negozio di lampadari. 
-        Con la nuova gestione, vogliamo continuare a portare avanti l’eccellenza e la passione per l’illuminazione che, da anni, 
-        hanno reso Benetti Illuminazione un riferimento per la città ed il territorio della Valle dell'Agno. </p><br>
-        <p style="font-size: 1.25rem"> Oggi, con uno sguardo rinnovato verso le ultime tendenze di design e tecnologia, manteniamo intatti i valori di 
-        competenza, serietà e attenzione al cliente che ci hanno preceduti. Offriamo una selezione accurata di lampadari, 
-        applique, faretti e soluzioni luminose per ogni stile ed esigenza, insieme ad un servizio di consulenza per aiutarti
-        a scegliere l’illuminazione perfetta per la tua casa o la tua attività. </p><br>
-        <p style="font-size: 1.25rem">Siamo qui per accoglierti, consigliarti ed illuminare ogni tuo progetto con qualità e professionalità. Ti aspettiamo!</p>
-        <br><br>
-        <h2 class="otherSubtitle">Il negozio</h2>
-        <img src="/images/insegna.jpg" alt="Insegna Negozio" id="shop" style="width:40%;height:auto;">
-        <br><br>
-        <h2 class="otherSubtitle">Tutto quello che devi sapere su di noi, in un colpo d'occhio</h2>
-        <div style="display: flex; justify-content: space-evenly; flex-wrap: wrap; gap: 40px;">
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
-                <img src="/images/volantino.jpg" alt="Volantino JDLed Illuminazione" style="width: 100%; max-width: 400px; margin-top: 1rem;">
-                <button onclick="DownloadWithFilename('/images/volantino.pdf', 'volantino_JDLed.pdf')" class="whoweare-image-button">
-                    Download Volantino (PDF)
-                </button>
+        <section class="whoweare-section">
+            <h1 class="otherTitle">Chi Siamo</h1>
+            
+            <div class="whoweare-content">
+                <p class="whoweare-lead">
+                    La nostra storia nasce dall’esperienza e dalla professionalità che da sempre contraddistinguono questo negozio di lampadari. 
+                    Con la nuova gestione, vogliamo continuare a portare avanti l’eccellenza e la passione per l’illuminazione che, da anni, 
+                    hanno reso Benetti Illuminazione un riferimento per la città ed il territorio della Valle dell'Agno.
+                </p>
+                <p>
+                    Oggi, con uno sguardo rinnovato verso le ultime tendenze di design e tecnologia, manteniamo intatti i valori di 
+                    competenza, serietà e attenzione al cliente che ci hanno preceduti. Offriamo una selezione accurata di lampadari, 
+                    applique, faretti e soluzioni luminose per ogni stile ed esigenza, insieme ad un servizio di consulenza per aiutarti
+                    a scegliere l’illuminazione perfetta per la tua casa o la tua attività.
+                </p>
+                <p>
+                    Siamo qui per accoglierti, consigliarti ed illuminare ogni tuo progetto con qualità e professionalità. Ti aspettiamo!
+                </p>
             </div>
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
-                <img src="/images/fronteBiglietto.jpg" alt="Biglietto da Visita JDLed Illuminazione" style="width: 100%; max-width: 400px; margin-top: 1rem;">
-                <button onclick="DownloadWithFilename('/images/bigliettoVisita.pdf', 'bigliettoVisita.pdf')" class="whoweare-image-button">
-                    Download Biglietto da Visita (PDF)
-                </button>
+        </section>
+
+        <section class="whoweare-shop-section">
+            <h2 class="otherSubtitle">Il negozio</h2>
+            <div class="whoweare-shop-wrapper">
+                <img src="/images/insegna.jpg" alt="Insegna Negozio" id="shop">
             </div>
-        </div>
-        <br><br>
+        </section>
+
+        <section class="whoweare-brochure-section">
+            <h2 class="otherSubtitle">Tutto quello che devi sapere su di noi, in un colpo d'occhio</h2>
+            <div class="whoweare-cards-grid">
+                <div class="whoweare-card">
+                    <img src="/images/volantino.jpg" alt="Volantino JDLed Illuminazione">
+                    <button onclick="DownloadWithFilename('/images/volantino.pdf', 'volantino_JDLed.pdf')" class="whoweare-image-button">
+                        Download Volantino (PDF)
+                    </button>
+                </div>
+                <div class="whoweare-card">
+                    <img src="/images/fronteBiglietto.jpg" alt="Biglietto da Visita JDLed Illuminazione">
+                    <button onclick="DownloadWithFilename('/images/bigliettoVisita.pdf', 'bigliettoVisita.pdf')" class="whoweare-image-button">
+                        Download Biglietto da Visita (PDF)
+                    </button>
+                </div>
+            </div>
+        </section>
     </main>
     <div include-html="footer.html"></div>
-    <script src="../js/lang.js"></script>s
 </body>
 </html>
