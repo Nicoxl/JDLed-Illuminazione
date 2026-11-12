@@ -17,6 +17,7 @@
     "manage_cookies": "Manage Cookies"
   },
   "home": {
+    "meta_desc": "JDLed Illuminazione in Cornedo Vicentino (Vicenza, Italy): designer chandeliers, modern LED lighting and bespoke lighting plans for home and garden.",
     "page_title": "JDLed Illuminazione",
     "subtitle": "All the tips you need to light up your home with the latest trends, adding style and elegance to your living space whilst offering high-quality products to suit a range of needs",
     "btn_interni": "Interior Lighting",
@@ -24,6 +25,7 @@
     "btn_contacts": "Contact Us for a Consultation"
   },
   "whoweare": {
+    "meta_desc": "Discover JDLed Illuminazione in Cornedo Vicentino (formerly Benetti Illuminazione): lighting expertise, Italian design and tailored advice in Vicenza.",
     "page_title": "Who We Are | JDLed Illuminazione",
     "title": "Who We Are",
     "p1": "Our story is rooted in the experience and professionalism that have always set this lighting shop apart. Under new management, we aim to continue upholding the excellence and passion for lighting that, for years, have made Benetti Illuminazione a leading name in the city and the Agno Valley region.",
@@ -37,6 +39,7 @@
     "card_filename": "business_card.pdf"
   },
   "interni": {
+    "meta_desc": "Italian interior LED lighting: modern chandeliers, pendant lights, wall sconces, ceiling lamps and recessed spotlights for living rooms and bedrooms.",
     "page_title": "Interior Lighting | JDLed Illuminazione",
     "title": "Interior Lighting",
     "kicker": "Design, atmosphere and comfort for every space",
@@ -47,6 +50,7 @@
     "cta_btn": "Request a Consultation"
   },
   "esterni": {
+    "meta_desc": "Weatherproof outdoor LED lighting: architectural wall sconces, garden lanterns, bollards and pathway lights for terraces, gardens and facades.",
     "page_title": "Exterior Lighting | JDLed Illuminazione",
     "title": "Exterior Lighting",
     "kicker": "Elegance, durability and safety for outdoor spaces",
@@ -56,6 +60,7 @@
     "cta_btn": "Request a Consultation"
   },
   "contacts": {
+    "meta_desc": "Visit the JDLed Illuminazione showroom at Via Monte Cimone 15/b in Cornedo Vicentino (VI), Italy, or contact us for a tailored lighting consultation.",
     "page_title": "Contacts | JDLed Illuminazione",
     "title": "Contacts",
     "desc": "Do you need information? Write to us or come visit us.",
@@ -87,6 +92,7 @@
     "btn_submit": "Submit"
   },
   "cookie": {
+    "meta_desc": "Cookie Policy of JDLed Illuminazione (Project Lux): details on cookies used and how to manage your browsing preferences.",
     "page_title": "Cookie Policy | JDLed Illuminazione",
     "title": "Cookie Policy",
     "kicker": "Cookie management and browsing preferences",
@@ -117,6 +123,7 @@
     "p_5_2": "For more information about the processing of personal data, please consult our <a target=\"_blank\" rel=\"noopener\" href=\"privacy-policy.html\">Privacy Policy</a>."
   },
   "privacy": {
+    "meta_desc": "Privacy Policy of JDLed Illuminazione (Project Lux): personal data protection and GDPR compliance notice.",
     "page_title": "Privacy Policy | JDLed Illuminazione",
     "title": "Privacy Policy",
     "kicker": "Protection of personal data",
@@ -154,6 +161,7 @@
     "p_9": "We reserve the right to update this Privacy Policy at any time. Changes will be published on this page."
   },
   "terms": {
+    "meta_desc": "Legal notes, company details and terms of use for the official JDLed Illuminazione (Project Lux) website.",
     "page_title": "Legal Notes/Terms of Use | JDLed Illuminazione",
     "title": "Legal Notes and Terms of Use",
     "kicker": "Terms of use and company information",

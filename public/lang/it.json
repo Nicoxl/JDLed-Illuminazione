@@ -17,6 +17,7 @@
     "manage_cookies": "Gestisci Cookie"
   },
   "home": {
+    "meta_desc": "JDLed Illuminazione a Cornedo Vicentino (VI): lampadari moderni, illuminazione LED di design e consulenza illuminotecnica su misura per casa e giardino.",
     "page_title": "JDLed Illuminazione",
     "subtitle": "Tutti i consigli per illuminare la tua casa con le ultime tendenze per donare stile ed eleganza all'ambiente offrendo prodotti di alta qualità per diverse esigenze",
     "btn_interni": "Illuminazione Interni",
@@ -24,6 +25,7 @@
     "btn_contacts": "Contattaci per una consulenza"
   },
   "whoweare": {
+    "meta_desc": "Scopri JDLed Illuminazione (ex Benetti Illuminazione) a Cornedo Vicentino: esperienza, passione e progettazione luci su misura in tutta la provincia di Vicenza.",
     "page_title": "Chi Siamo | JDLed Illuminazione",
     "title": "Chi Siamo",
     "p1": "La nostra storia nasce dall’esperienza e dalla professionalità che da sempre contraddistinguono questo negozio di lampadari. Con la nuova gestione, vogliamo continuare a portare avanti l’eccellenza e la passione per l’illuminazione che, da anni, hanno reso Benetti Illuminazione un riferimento per la città ed il territorio della Valle dell'Agno.",
@@ -37,6 +39,7 @@
     "card_filename": "bigliettoVisita.pdf"
   },
   "interni": {
+    "meta_desc": "Illuminazione per interni a Vicenza: sospensioni, lampadari moderni, applique, plafoniere e faretti LED di design per soggiorno, cucina e zona notte.",
     "page_title": "Illuminazione per Interni | JDLed Illuminazione",
     "title": "Illuminazione per Interni",
     "kicker": "Design, atmosfera e comfort per ogni ambiente",
@@ -47,6 +50,7 @@
     "cta_btn": "Richiedi una consulenza"
   },
   "esterni": {
+    "meta_desc": "Illuminazione per esterni LED di design: applique da parete, segnapasso, faretti e lampioni resistenti alle intemperie per giardini, terrazze e facciate.",
     "page_title": "Illuminazione per Esterni | JDLed Illuminazione",
     "title": "Illuminazione per Esterni",
     "kicker": "Eleganza, resistenza e sicurezza per gli spazi outdoor",
@@ -56,6 +60,7 @@
     "cta_btn": "Richiedi una consulenza"
   },
   "contacts": {
+    "meta_desc": "Visita lo showroom JDLed Illuminazione in Via Monte Cimone 15/b a Cornedo Vicentino (VI) o contattaci per un preventivo gratuito di illuminotecnica.",
     "page_title": "Contatti | JDLed Illuminazione",
     "title": "Contatti",
     "desc": "Hai bisogno di informazioni? Scrivici o vieni a trovarci.",
@@ -87,6 +92,7 @@
     "btn_submit": "Invia"
   },
   "cookie": {
+    "meta_desc": "Cookie Policy di JDLed Illuminazione (Project Lux): informazioni sui cookie utilizzati e gestione rapida delle tue preferenze di navigazione.",
     "page_title": "Cookie Policy | JDLed Illuminazione",
     "title": "Cookie Policy",
     "kicker": "Gestione dei cookie e preferenze di navigazione",
@@ -117,6 +123,7 @@
     "p_5_2": "Per maggiori informazioni sul trattamento dei dati personali, consulta la nostra <a target=\"_blank\" rel=\"noopener\" href=\"privacy-policy.html\">Privacy Policy</a>."
   },
   "privacy": {
+    "meta_desc": "Informativa sulla Privacy di JDLed Illuminazione (Project Lux): trattamento dei dati personali ai sensi del GDPR.",
     "page_title": "Privacy Policy | JDLed Illuminazione",
     "title": "Privacy Policy",
     "kicker": "Tutela e protezione dei dati personali",
@@ -154,6 +161,7 @@
     "p_9": "Ci riserviamo il diritto di aggiornare la presente Privacy Policy in qualsiasi momento. Le modifiche saranno pubblicate su questa pagina."
   },
   "terms": {
+    "meta_desc": "Note legali, dati societari e termini di utilizzo del sito web ufficiale di JDLed Illuminazione (Project Lux).",
     "page_title": "Note Legali/Termini di Utilizzo | JDLed Illuminazione",
     "title": "Note Legali e Termini di Utilizzo",
     "kicker": "Condizioni d'uso e informazioni societarie",

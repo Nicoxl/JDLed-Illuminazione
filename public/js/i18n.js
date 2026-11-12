@@ -46,7 +46,7 @@
         }
     }
 
-    function applyTranslations(root = document) {
+   function applyTranslations(root = document) {
         updateSwitcherUI();
 
         if (!translations || Object.keys(translations).length === 0 || isApplying) return;
@@ -87,6 +87,15 @@
             if (pageTitleKey) {
                 const pageTitle = getNestedValue(translations, pageTitleKey);
                 if (pageTitle !== null) document.title = pageTitle;
+            }
+
+            const metaDescKey = document.body ? document.body.getAttribute('data-i18n-meta-desc') : null;
+            if (metaDescKey) {
+                const metaDescVal = getNestedValue(translations, metaDescKey);
+                const metaTag = document.querySelector('meta[name="description"]');
+                if (metaDescVal !== null && metaTag) {
+                    metaTag.setAttribute('content', metaDescVal);
+                }
             }
         } finally {
             isApplying = false;
