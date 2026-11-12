@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <!--Redirect 301-->
-    <link rel="canonical" href="https://jdledprojectlux.com/en/" />
+    <link rel="canonical" href="https://jdledprojectlux.com/it/" />
     <script>
       var host = window.location.hostname;
       if (host.includes("web.app") || host.includes("firebaseapp.com")) {
@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>JDLed Illuminazione</title>
     <meta name="google-site-verification" content="7h1F6NSx2JzUXexdbYautrOvIHC158QyWufGms42Z9w" />
-    <meta name="description" content="JDLed Illuminazione (Project Lux) - All the tips for lighting your home with the latest trends and high-quality products">
+    <meta name="description" content="JDLed Illuminazione (Project Lux) - Tutti i consigli per illuminare la tua casa con le ultime tendenze e prodotti di alta qualità">
     <meta property="og:site_name" content="JDLed Illuminazione (Project Lux)" />
     <link rel="manifest" href="/manifest.webmanifest">
     <meta name="msapplication-TileColor" content="#8c6f4d">
@@ -39,30 +39,30 @@
     <script defer src="/__/firebase/init.js"></script>
     <!-- Google tag (gtag.js) -->
     <script>
-      // 1. Inizializza subito le variabili essenziali per non perdere i dati
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-V0NZSTZY12'); 
+    // 1. Inizializza subito le variabili essenziali per non perdere i dati
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V0NZSTZY12'); 
+    // 2. Crea la funzione per caricare lo script esterno "pesante"
+    function loadGTM() {
+        var script = document.createElement('script');
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-V0NZSTZY12";
+        script.async = true;
+        document.head.appendChild(script);
+    }
+    // 3. Aspetta che l'utente faccia qualcosa (scroll, click, ecc.) prima di caricarlo
+    const interactionEvents = ['scroll', 'mousemove', 'touchstart', 'keydown'];
+    let isLoaded = false;
 
-      // 2. Crea la funzione per caricare lo script esterno "pesante"
-      function loadGTM() {
-          var script = document.createElement('script');
-          script.src = "https://www.googletagmanager.com/gtag/js?id=G-V0NZSTZY12";
-          script.async = true;
-          document.head.appendChild(script);
-      }
-      // 3. Aspetta che l'utente faccia qualcosa (scroll, click, ecc.) prima di caricarlo
-      const interactionEvents = ['scroll', 'mousemove', 'touchstart', 'keydown'];
-      let isLoaded = false;
-      interactionEvents.forEach(event => {
-          window.addEventListener(event, () => {
-              if (!isLoaded) {
-                  loadGTM();
-                  isLoaded = true;
-              }
-          }, { once: true, passive: true });
-      });
+    interactionEvents.forEach(event => {
+        window.addEventListener(event, () => {
+            if (!isLoaded) {
+                loadGTM();
+                isLoaded = true;
+            }
+        }, { once: true, passive: true });
+    });
     </script>
     <script type="application/ld+json">
         {
@@ -83,16 +83,28 @@
     <!--End Preloader -->
      <div include-html="header.html"></div>
       <main id="mainMain">
+      <section class="hero-section">
+        <div class="hero-logo">
+          <img src="/images/logo.jpg" alt="JDLed Illuminazione Logo">
+        </div>
         <div class="hero-container">
           <div class="title-box">
             <h1 class="bigTitle">JDLed Illuminazione</h1>
-            <h2 class="smallTitle">Project Lux</h2>
+            <p class="smallTitle">Project Lux</p>
           </div>
           <div class="subtitle-box">
-            <h2 id="subtitle">All the tips for lighting your home with the latest trends and high-quality products</h2>
+            <h2 id="subtitle">All the tips you need to light up your home with the latest trends, adding style and elegance to your living space whilst offering high-quality products to suit a range of needs</h2>
+          </div>
+          <div class="hero-cta-group">
+            <div class="hero-cta-row">
+              <a href="illuminazione-interni.html" class="hero-btn hero-btn-secondary">Interior Lighting</a>
+              <a href="illuminazione-esterni.html" class="hero-btn hero-btn-secondary">Exterior Lighting</a>
+            </div>
+            <a href="contacts.html" class="hero-btn hero-btn-primary">Contact Us for a Consultation</a>
           </div>
         </div>
-      </main>
+      </section>
+    </main>
       <div include-html="footer.html"></div>
       <script src="../js/lang.js"></script>
   </body>
