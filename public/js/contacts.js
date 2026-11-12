@@ -110,18 +110,29 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             try {
-                // Converte automaticamente l'action di FormSubmit nell'endpoint AJAX
                 const ajaxUrl = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
-                const formData = new FormData(form);
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 10000);
 
                 const response = await fetch(ajaxUrl, {
                     method: 'POST',
-                    body: formData,
+                    signal: controller.signal,
                     headers: {
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json'
-                    }
+                    },
+                    body: JSON.stringify({
+                        name: nome,
+                        email: email,
+                        tel: telefono,
+                        msg: messaggio,
+                        _subject: "Nuovo messaggio da JDLED Project Lux!",
+                        _captcha: "false",
+                        _honey: document.querySelector('input[name="_honey"]')?.value || ""
+                    })
                 });
 
+                clearTimeout(timeoutId);
                 const result = await response.json();
 
                 if (response.ok && (result.success === "true" || result.success === true)) {
@@ -135,14 +146,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     throw new Error(result.message || 'Errore FormSubmit');
                 }
             } catch (err) {
-                console.error('Errore invio form:', err);
+                console.error('Dettaglio errore form:', err);
                 if (msg) {
                     msg.textContent = t.error;
                     msg.style.color = "#dc3545";
                     msg.style.display = "block";
                 }
             } finally {
-                // Riabilita sempre il pulsante, sia in caso di successo che di errore
                 if (submitBtn) submitBtn.disabled = false;
             }
         });
