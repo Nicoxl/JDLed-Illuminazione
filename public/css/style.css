@@ -85,6 +85,31 @@ nav {
   width: 100%;
 }
 
+nav a {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #b67b0d;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #b67b0d;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
 .menu {
   display: none;
   flex-direction: column;
@@ -323,6 +348,15 @@ body.contacts main::before {
   background-color: rgba(255, 255, 255, 0.5); 
   border-radius: 8px;
   box-sizing: border-box;
+  border: 1px solid rgba(182, 123, 13, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.contacts-info:hover,
+.contacts-form-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(182, 123, 13, 0.12);
+  border-color: rgba(182, 123, 13, 0.45);
 }
 
 .contacts-desc {
@@ -346,12 +380,14 @@ body.contacts main::before {
 .contacts-info a {
   color: #8c6f4d;
   text-decoration: none;
-  transition: color 0.2s ease;
+  display: inline-block;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .contacts-info a:hover {
-  color: #a4825b;
   text-decoration: underline;
+  color: #b67b0d;
+  transform: translateX(4px);
 }
 
 .contacts-info h3,
@@ -397,11 +433,19 @@ a[href^="mailto:"]:hover {
   max-width: 100%;
   padding: 0.7rem;
   resize: none;
-  border: 1px solid #c5b59a;
   border-radius: 0.3rem;
   background-color: #fffaf5;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   box-sizing: border-box;
+  border: 1px solid #ccc;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+.contacts-form input:focus,
+.contacts-form textarea:focus {
+  outline: none;
+  border-color: #b67b0d;
+  box-shadow: 0 0 0 3px rgba(182, 123, 13, 0.18);
+  background-color: #fff;
 }
 
 .contacts-form button {
@@ -414,11 +458,17 @@ a[href^="mailto:"]:hover {
   border-radius: 0.3rem;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.25s ease;
+  transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
 }
 
 .contacts-form button:hover {
-  background-color: #5e4427;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(182, 123, 13, 0.3);
+}
+
+.contacts-form button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(182, 123, 13, 0.2);
 }
 
 #form-msg {
@@ -775,6 +825,9 @@ footer a {
       width: 100%;
       font-size: 1.05rem;
       padding: 1.25rem;
+    }
+    .contacts-info a:hover {
+      transform: none;
     }
 
     /* Testo descrittivo */
