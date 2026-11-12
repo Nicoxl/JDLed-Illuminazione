@@ -1,0 +1,263 @@
+/* =========================================
+   CONTATTI E FORM (body.contacts)
+   ========================================= */
+
+body.contacts main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("../images/logo.jpg") no-repeat center 80px;
+    background-size: clamp(450px, 45vw, 850px) auto;
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.contacts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+}
+
+.contacts-info,
+.contacts-form-wrapper {
+    flex: 1 1 320px;
+    max-width: 500px;
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-sizing: border-box;
+    border: 1px solid rgba(182, 123, 13, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.contacts-info:hover,
+.contacts-form-wrapper:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(182, 123, 13, 0.12);
+    border-color: rgba(182, 123, 13, 0.45);
+}
+
+.contacts-desc {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.contacts-info {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.contacts-form-wrapper {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.contacts-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.contacts-info a:hover {
+    text-decoration: underline;
+    color: #b67b0d;
+    transform: translateX(4px);
+}
+
+.contacts-info h3,
+.contacts-form-wrapper h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+
+.title-recapiti,
+.title-societari {
+    color: #b67b0d;
+}
+
+a[href^="tel:"],
+a[href^="mailto:"] {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a[href^="tel:"]:hover,
+a[href^="mailto:"]:hover {
+    color: #a4825b;
+    text-decoration: underline;
+}
+
+.contacts-form {
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.contacts-form label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+    font-weight: bold;
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.contacts-form input,
+.contacts-form textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.7rem;
+    resize: none;
+    border-radius: 0.3rem;
+    background-color: #fffaf5;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.contacts-form input:focus,
+.contacts-form textarea:focus {
+    outline: none;
+    border-color: #b67b0d;
+    box-shadow: 0 0 0 3px rgba(182, 123, 13, 0.18);
+    background-color: #fff;
+}
+
+.contacts-form button {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #7a5a32;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+}
+
+.contacts-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(182, 123, 13, 0.3);
+}
+
+.contacts-form button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(182, 123, 13, 0.2);
+}
+
+#form-msg {
+    display: block;
+    margin: 1.2rem auto 0 auto;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    clear: both;
+}
+
+/* Nasconde logo filigrana contatti sotto 1450px */
+@media (max-width: 1450px) {
+    body.contacts main::before,
+    main:has(.contacts-grid)::before {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+}
+
+/* Mobile Contatti */
+@media (max-width: 1024px) {
+    .contacts-grid {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1.5rem;
+        width: 100%;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contacts-info,
+    .contacts-form-wrapper {
+        flex: 1 1 100%;
+        max-width: 100%;
+        width: 100%;
+        font-size: 1.05rem;
+        padding: 1.25rem;
+    }
+
+    .contacts-info a:hover {
+        transform: none;
+    }
+
+    .contacts-desc {
+        font-size: 1.50rem;
+        font-weight: bold;
+        margin: 1.5rem 0 1rem 0;
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    .contacts-info h3,
+    .contacts-form-wrapper h3,
+    .title-recapiti,
+    .title-societari {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+
+    .contacts-form {
+        font-size: 1rem;
+    }
+
+    .contacts-form label {
+        font-size: 0.95rem;
+        margin-top: 0.8rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .contacts-form input,
+    .contacts-form textarea {
+        font-size: 14px;
+        padding: 0.65rem;
+    }
+
+    .contacts-form input::placeholder,
+    .contacts-form textarea::placeholder {
+        font-size: 0.85rem;
+        opacity: 0.7;
+    }
+
+    .contacts-form textarea {
+        min-height: 100px;
+    }
+
+    .contacts-form button {
+        font-size: 1rem;
+        padding: 0.75rem 1.2rem;
+        margin-top: 1.2rem;
+    }
+
+    #form-msg {
+        font-size: 0.95rem;
+        margin-top: 12px;
+    }
+}

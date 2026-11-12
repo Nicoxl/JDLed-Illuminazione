@@ -1,0 +1,108 @@
+/* =========================================
+   HOME PAGE (body.home)
+   ========================================= */
+
+body.home main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("../images/logo.jpg") no-repeat center center;
+    background-size: min(85%, 650px) auto;
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 70vh;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h1.bigTitle {
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    border-bottom: 2px solid #c4b494;
+    display: inline-block;
+    padding-bottom: 0.3em;
+    margin: 2rem 0;
+    max-width: 100%;
+    align-self: flex-start;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.smallTitle {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    border-bottom: 2px solid #c4b494;
+    padding-bottom: 0.3em;
+    margin: 2rem 0;
+    max-width: fit-content;
+    align-self: flex-start;
+}
+
+#subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin: 2rem 0;
+    max-width: 600px;
+    align-self: flex-end;
+    text-align: right;
+    background-color: rgba(253, 247, 238, 0.6);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+@media (max-width: 1024px) {
+    h1.bigTitle {
+        text-align: center;
+        margin: 0 auto;
+        align-self: center;
+        font-size: clamp(2.2rem, 9vw, 5rem);
+        width: 90%;
+        max-width: 100%;
+        line-height: 1.1;
+    }
+
+    .smallTitle {
+        text-align: center;
+        margin: 0.2rem auto 0 auto;
+        align-self: top;
+        padding: 1rem 0.5rem 0.2rem 0.5rem;
+        font-size: 2rem;
+        border-bottom: 2px solid #c4b494;
+        max-width: fit-content;
+        display: block;
+    }
+
+    #subtitle {
+        margin-top: auto;
+        margin-bottom: 2rem;
+        text-align: center;
+        align-self: center;
+        max-width: 100%;
+        background-color: rgba(253, 247, 238, 0.85);
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(140, 111, 77, 0.1);
+    }
+
+    .titlebox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+
+    .hero-container {
+        flex: 1;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
+}
