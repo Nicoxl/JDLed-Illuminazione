@@ -148,10 +148,11 @@ document.addEventListener('DOMContentLoaded', function () {
             } catch (err) {
                 console.error('Dettaglio errore form:', err);
                 if (msg) {
-                    msg.textContent = t.error;
+                    msg.textContent = t.error + " (" + err.message + ")";
                     msg.style.color = "#dc3545";
                     msg.style.display = "block";
                 }
+            }
             } finally {
                 if (submitBtn) submitBtn.disabled = false;
             }
