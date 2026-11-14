@@ -64,8 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* =========================================
-   JDLED PROJECT LUX - COOKIE CONSENT MANAGER (GDPR)
-   Integrato direttamente in main.js
+    COOKIE CONSENT MANAGER (GDPR)
    ========================================= */
 (function () {
     const GA_ID = 'G-V0NZSTZY12';
