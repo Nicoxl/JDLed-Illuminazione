@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <!-- Triangolo rettangolo con angoli arrotondati fedele al logo originale -->
+  <path d="M 122 370 
+           Q 122 350 137 365 
+           L 598 880 
+           Q 612 896 590 896 
+           L 132 896 
+           Q 118 896 118 882 
+           Z" fill="#6D4C3B" />
+
+  <!-- Raggio superiore -->
+  <line x1="364" y1="472" x2="852" y2="212" stroke="#6D4C3B" stroke-width="32" stroke-linecap="round" />
+
+  <!-- Raggio centrale -->
+  <line x1="428" y1="542" x2="964" y2="486" stroke="#6D4C3B" stroke-width="32" stroke-linecap="round" />
+
+  <!-- Raggio inferiore -->
+  <line x1="494" y1="636" x2="938" y2="748" stroke="#6D4C3B" stroke-width="32" stroke-linecap="round" />
+</svg>
