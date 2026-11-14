@@ -1,36 +1,37 @@
-/* Funzione per includere Header e Footer nelle pagine */
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    file = elmnt.getAttribute("include-html");
-    if (file) {
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {
-                elmnt.innerHTML = this.responseText;
-                aggiornaAnno();
-                evidenziaPaginaAttiva();
-                if (window.JDLedI18n && window.JDLedI18n.getLang) {
-                    window.JDLedI18n.setLang(window.JDLedI18n.getLang());
-                }
+/* Funzione moderna e parallela per includere Header e Footer senza race condition */
+async function includeHTML() {
+    const elements = Array.from(document.querySelectorAll('[include-html]'));
+    if (elements.length === 0) return;
+
+    await Promise.all(elements.map(async (elmnt) => {
+        const file = elmnt.getAttribute('include-html');
+        if (!file) return;
+
+        try {
+            const response = await fetch(file);
+            if (response.ok) {
+                elmnt.innerHTML = await response.text();
+            } else {
+                elmnt.innerHTML = 'Page not found.';
             }
-          if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
-          elmnt.removeAttribute("include-html");
-          includeHTML();
+        } catch (err) {
+            console.error('Errore caricamento componente:', file, err);
+        } finally {
+            elmnt.removeAttribute('include-html');
         }
-      };
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      return;
+    }));
+
+    aggiornaAnno();
+    evidenziaPaginaAttiva();
+
+    // Ri-applica sempre le traduzioni dopo che header e footer sono stati inseriti nel DOM
+    if (window.JDLedI18n && typeof window.JDLedI18n.getLang === 'function') {
+        window.JDLedI18n.setLang(window.JDLedI18n.getLang());
     }
-  }
 }
 
 function aggiornaAnno() {
-    const spanAnno = document.getElementById("current-year");
+    const spanAnno = document.getElementById('current-year');
     if (spanAnno) {
         spanAnno.innerText = new Date().getFullYear();
     }
@@ -52,7 +53,7 @@ function evidenziaPaginaAttiva() {
 document.addEventListener('DOMContentLoaded', includeHTML);
 
 // Preloader veloce (non blocca l'LCP)
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const preloader = document.getElementById('preloader');
     if (preloader) {
         preloader.classList.add('loaded');
